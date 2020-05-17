@@ -40,7 +40,7 @@ namespace CTP
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
-            //services.AddDbContext<CTP.Models.BookManager>();
+            services.AddDbContext<CTP.Models.BookManager>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

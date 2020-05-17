@@ -1,0 +1,113 @@
+//background image
+.bg-image {
+    z-index: -1;
+    width: 100%;
+    opacity: .7;
+    position: fixed;
+}
+//CTP title link anchor tag
+.home-link {
+    color: $white;
+    &:hover {
+        @include active-link();
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+//top header bar
+.header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background-color: $dark-grey;
+    color: $white;
+    padding: 10px;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    //header title and search bar
+    &__main {
+        @include display-flex();
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        //div
+        &__title {
+            font-family: $title-font;
+            font-size: $large-text;
+        }
+        //form
+        &__search {
+            width: 250px;
+            background-color: $white;
+            border-radius: 5px;
+            @include display-flex();
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+    }
+    //div for bottom bar
+    &__bottom {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    //social links
+    &__social {
+        text-align: right;
+    }
+    //nav links
+    &__nav {
+        @include display-flex();
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin: 0;
+        //span tag
+        // &__item {
+
+        // }
+    }
+}
+//anchor tag
+.nav-item {
+    font-family: $base-font;
+    font-size: $medium-text;
+    color: $accent-color;
+    &:hover {
+        @include active-link();
+    }
+}
+//input tag
+.searchbar {
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding-left: 10px;
+    color: $accent-color;
+    &:focus {
+        outline-width: 0;
+        outline: none;
+    }
+}
+//button tag with the magnifying glass inside
+.search-button {
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    i {
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
+//social link tag
+.social-item {
+    font-size: $large-text;
+    cursor: pointer;
+    &:hover {
+        color: $accent-color;
+    }
+}

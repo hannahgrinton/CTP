@@ -1,0 +1,100 @@
+.bg-image {
+  z-index: -1;
+  width: 100%;
+  opacity: .7;
+  position: fixed; }
+
+.home-link {
+  color: #ffffff; }
+  .home-link:hover {
+    text-decoration: none;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #acc6c9;
+    color: #acc6c9;
+    border-bottom: none;
+    padding-bottom: 0; }
+
+.header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 10px;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999; }
+  .header__main {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; }
+    .header__main__title {
+      font-family: "Jost", sans-serif;
+      font-size: 30px; }
+    .header__main__search {
+      width: 250px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between; }
+  .header__bottom {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px; }
+  .header__social {
+    text-align: right; }
+  .header__nav {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0; }
+
+.nav-item {
+  font-family: "Assistant", sans-serif;
+  font-size: 18px;
+  color: #688386; }
+  .nav-item:hover {
+    text-decoration: none;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #acc6c9;
+    color: #acc6c9; }
+
+.searchbar {
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  padding-left: 10px;
+  color: #688386; }
+  .searchbar:focus {
+    outline-width: 0;
+    outline: none; }
+
+.search-button {
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer; }
+  .search-button i:hover {
+    color: #688386; }
+
+.social-item {
+  font-size: 30px;
+  cursor: pointer; }
+  .social-item:hover {
+    color: #688386; }

@@ -7,17 +7,40 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Jost:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6d0b9dc65c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-       
-    </header>
-    
-    @RenderBody()
+    <img src="~/images/CTPimage.jpg" class="bg-image">
+    <header class="header">
+        <div class="header__main">
+            <div class="header__main__title"><a href="/" class="home-link">Christian Truth Publishing</a></div>
+            <form class="header__main__search" method="" action="">
+                <input autocomplete="on" required="required" placeholder="search..." type="text" class="searchbar">
+                <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+            </form>@*header__main__search*@
+        </div>@*header__main*@
+        <div class="header__bottom">
+            <nav class="header__nav">
+                <span class="header__nav__item"><a class="nav-item" href="#">eBooks</a></span>
+                <span class="header__nav__item"><a class="nav-item" href="#">Books</a></span>
+                <span class="header__nav__item"><a class="nav-item" href="#">Study</a></span>
+                <span class="header__nav__item"><a class="nav-item" href="#">Booklets</a></span>
+                <span class="header__nav__item"><a class="nav-item" href="#">Languages</a></span>
+            </nav>@*header__nav*@
+            <div class="header__social">
+                <span class="social-item" id="btnPhone"><i class="fas fa-phone-square"></i></span>
+                <span class="social-item" id="btnEmail"><i class="fas fa-envelope-square"></i></span>
+            </div>@*header__social*@
+        </div>@*header__bottom*@
+    </header> @*header*@
 
-    <footer>
+    <div class="main">
+        @RenderBody()
+    </div>@*main*@
+    
+    <footer class="footer">
         
-    </footer>
+    </footer>@*footer*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System.Text;
-using System.IO;
+// using Microsoft.Extensions.Logging;
 using CTP.Models;
 
 namespace CTP.Controllers
@@ -16,14 +14,11 @@ namespace CTP.Controllers
     public class HomeController : Controller
     {
         private BookManager bookManager;
-        private IWebHostEnvironment environment;
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger, BookManager myManager, IWebHostEnvironment env)
+        // private IWebHostEnvironment environment;
+        public HomeController(BookManager myManager)
         {
-            _logger = logger;
             bookManager = myManager;
-            environment = env;
+            // environment = env;
         }
 
         public IActionResult Index()

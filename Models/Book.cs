@@ -11,6 +11,11 @@ namespace CTP.Models
         [MaxLength(200)]
         [Display(Name="Title")]
         public string title {get; set;}
+        //code of article
+        [Required]
+        [MaxLength(10)]
+        [Display(Name="Code")]
+        public string code {get; set;}
         //author of article
         [Required]
         [MaxLength(200)]
