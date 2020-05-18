@@ -23,6 +23,32 @@ namespace CTP.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Current = "";
+            return View(bookManager);
+        }
+
+        public IActionResult Ebooks() {
+            ViewBag.Current = "Ebooks";
+            return View(bookManager);
+        }
+
+        public IActionResult Books() {
+            ViewBag.Current = "Books";
+            return View(bookManager);
+        }
+
+        public IActionResult Booklets() {
+            ViewBag.Current = "Booklets";
+            return View(bookManager);
+        }
+
+        public IActionResult Study() {
+            ViewBag.Current = "Study";
+            return View(bookManager);
+        }
+
+        public IActionResult Languages() {
+            ViewBag.Current = "Languages";
             return View(bookManager);
         }
 

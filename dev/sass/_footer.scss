@@ -1,17 +1,18 @@
+//footer
 .footer {
     z-index: 1;
     background-color: $dark-grey;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     bottom: 0;
-    position: absolute;
     width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     color: $accent-color;
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: $small-text;
+    //address in div tag
     &__address {
         @include display-flex();
         flex-flow: row nowrap;
@@ -22,8 +23,9 @@
             color: $light-color;
         }
     }
+    //phone numbers and email addresses in div tag
     &__social {
-        
+        //row
         &__item {
             padding-bottom: 10px;
             @include display-flex();
@@ -34,6 +36,7 @@
                 color: $light-color;
                 padding-bottom: 5px;
             }
+            //anchor for mailtos
             a {
                 color: $accent-color;
                 &:hover {
@@ -44,7 +47,9 @@
             }
         }
     }
+    //login and links to other sites in div
     &__admin {
+        //row
         &__item {
             padding-bottom: 10px;
             @include display-flex();
@@ -55,6 +60,7 @@
                 color: $light-color;
                 padding-bottom: 5px;
             }
+            //anchors for external links
             a {
                 color: $accent-color;
                 &:hover {

@@ -35,7 +35,7 @@
         //div
         &__title {
             font-family: $title-font;
-            font-size: $large-text;
+            font-size: $extra-large-text;
         }
         //form
         &__search {
@@ -110,4 +110,9 @@
     &:hover {
         color: $accent-color;
     }
+}
+
+.activeLink {
+    @include active-link();
+    pointer-events: none;
 }

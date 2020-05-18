@@ -6,8 +6,8 @@
     <title>Christian Truth Publishing</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Jost:wght@300&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/6d0b9dc65c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Jost:wght@300&display=swap" rel="stylesheet" SameSite=None>
+    <script src="https://kit.fontawesome.com/6d0b9dc65c.js" crossorigin="anonymous" SameSite=None></script>
 </head>
 <body>
     <img src="~/images/CTPimage.jpg" class="bg-image">
@@ -21,11 +21,11 @@
         </div>@*header__main*@
         <div class="header__bottom">
             <nav class="header__nav">
-                <span class="header__nav__item"><a class="nav-item" href="#">eBooks</a></span>
-                <span class="header__nav__item"><a class="nav-item" href="#">Books</a></span>
-                <span class="header__nav__item"><a class="nav-item" href="#">Study</a></span>
-                <span class="header__nav__item"><a class="nav-item" href="#">Booklets</a></span>
-                <span class="header__nav__item"><a class="nav-item" href="#">Languages</a></span>
+                <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Ebooks" ? "activeLink" : "") ' asp-controller="Home" asp-action="Ebooks" id="ebookLink">eBooks</a></span>
+                <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Books" ? "activeLink" : "") ' asp-controller="Home" asp-action="Books" id="bookLink">Books</a></span>
+                <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Study" ? "activeLink" : "") ' asp-controller="Home" asp-action="Study" id="studyLink">Study</a></span>
+                <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Booklets" ? "activeLink" : "") ' asp-controller="Home" asp-action="Booklets" id="bookletLink">Booklets</a></span>
+                <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Languages" ? "activeLink" : "") ' asp-controller="Home" asp-action="Languages" id="languageLink">Languages</a></span>
             </nav>@*header__nav*@
             <div class="header__social">
                 <span class="social-item" id="btnPhone"><i class="fas fa-phone-square"></i></span>
@@ -44,7 +44,8 @@
             <span>
                 9 - B Appledale Road<br>
                 Hamer Bay Ontario<br>
-                P0C 1H0
+                P0C 1H0<br>
+                Canada
             </span>
         </div>@*footer__address*@
         <div class="footer__social">
