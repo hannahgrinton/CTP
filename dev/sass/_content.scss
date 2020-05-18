@@ -61,13 +61,21 @@ img.homepage-image {
     bottom: 0;
     opacity: 1;
 }
+a.link-block {
+    &:hover .overlay-title {
+        color: $light-color;
+    }
+    &:hover .overlay-description {
+        color: $accent-color;
+    }
+}
 .overlay-title {
     font-size: $med-large-text;
-    color: $dark-grey;
+    color: $accent-color;
     padding-top: 5px;
 }
 .overlay-description {
     font-size: $small-text;
-    color: $accent-color;
+    color: $dark-grey;
     padding: 10px;
 }
