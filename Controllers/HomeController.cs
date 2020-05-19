@@ -32,8 +32,8 @@ namespace CTP.Controllers
             return View(bookManager);
         }
 
-        public IActionResult Books() {
-            ViewBag.Current = "Books";
+        public IActionResult Ministry() {
+            ViewBag.Current = "Ministry";
             return View(bookManager);
         }
 
@@ -42,8 +42,8 @@ namespace CTP.Controllers
             return View(bookManager);
         }
 
-        public IActionResult Study() {
-            ViewBag.Current = "Study";
+        public IActionResult Expositions() {
+            ViewBag.Current = "Expositions";
             return View(bookManager);
         }
 

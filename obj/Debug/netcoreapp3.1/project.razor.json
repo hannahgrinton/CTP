@@ -20526,13 +20526,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Study.cshtml",
-      "TargetPath": "Views\\Home\\Study.cshtml",
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Expositions.cshtml",
+      "TargetPath": "Views\\Home\\Expositions.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Books.cshtml",
-      "TargetPath": "Views\\Home\\Books.cshtml",
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Ministry.cshtml",
+      "TargetPath": "Views\\Home\\Ministry.cshtml",
       "FileKind": "mvc"
     },
     {

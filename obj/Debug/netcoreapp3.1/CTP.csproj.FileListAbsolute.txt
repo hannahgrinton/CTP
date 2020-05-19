@@ -50,7 +50,7 @@
 /Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/dev/package-lock.json
 /Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/dev/package.json
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Booklets.cshtml.g.cs
-/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Books.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Ebooks.cshtml.g.cs
-/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Study.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Languages.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Expositions.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Ministry.cshtml.g.cs

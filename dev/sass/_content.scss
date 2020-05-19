@@ -1,36 +1,14 @@
-.main {
-    max-width: 100%;
-    min-height: 100%;
-    z-index: 1px;
-    padding-top: 150px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-left: 60px;
-    padding-right: 60px;
-    background-color: $bg-color;
-    overflow-x: hidden;
-    text-align: center;
-    &__title {
-        font-size: $extra-large-text;
-        color: $dark-grey;
-        font-family: $title-font;
-    }
-    &__description {
-        font-size: $med-large-text;
-        color: $dark-grey;
-        font-family: $base-font;
-    }
-}
-
+//page content styles general to all pages
 .content {
     width: 100%;
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(300px);
     row-gap: 40px;
+    //homepage blocks
     &__block {
         box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 
                     0 6px 30px 5px rgba(0, 0, 0, 0.12), 
@@ -42,6 +20,7 @@
         position: relative;
         border-radius: 5px;
         text-align: center;
+        //overlay on pictures
         &__overlay {
             background-color: $overlay-color;
             width: 480px;
@@ -51,31 +30,4 @@
             margin-top: 200px;
         }
     }
-}
-img.homepage-image {
-    z-index: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    bottom: 0;
-    opacity: 1;
-}
-a.link-block {
-    &:hover .overlay-title {
-        color: $light-color;
-    }
-    &:hover .overlay-description {
-        color: $accent-color;
-    }
-}
-.overlay-title {
-    font-size: $med-large-text;
-    color: $accent-color;
-    padding-top: 5px;
-}
-.overlay-description {
-    font-size: $small-text;
-    color: $dark-grey;
-    padding: 10px;
 }

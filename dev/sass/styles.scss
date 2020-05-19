@@ -1,4 +1,18 @@
+//global style variables & mixins
 @import "variables";
+//header styles
 @import "header";
+//footer styles
 @import "footer";
+//main section of page
+@import "_main";
+//content styling of page
 @import "content";
+//styles specific to homepage
+@import "homepage";
+//styles for individual article listing
+@import "listing";
+//style for table filtering functionality
+@import "filter";
+//table styles
+@import "table";

@@ -1,0 +1,27 @@
+img.homepage-image {
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    opacity: 1;
+}
+a.link-block {
+    &:hover .overlay-title {
+        text-decoration: underline;
+    }
+    &:hover .overlay-description {
+        color: $accent-color;
+    }
+}
+.overlay-title {
+    font-size: $med-large-text;
+    color: $accent-color;
+    padding-top: 5px;
+}
+.overlay-description {
+    font-size: $small-text;
+    color: $dark-grey;
+    padding: 10px;
+}
