@@ -11,7 +11,12 @@
     padding-bottom: 15px;
     border-bottom: 3px solid $light-color;
     color: $light-color;
-}
+}//----------------------------- media values
+$extra-small-screen: 200px;
+$small-screen: 300px;
+$medium-screen: 400px;
+$large-screen: 800px;
+$extra-large-screen: 1200px;
 //------------------------------ variables
 //fonts
 $title-font: 'Jost', sans-serif;
@@ -21,6 +26,7 @@ $extra-large-text: 30px;
 $large-text: 26px;
 $med-large-text: 22px;
 $medium-text: 18px;
+$med-small-text: 16px;
 $small-text: 14px;
 //colors
 $dark-grey: #2b2b2b;

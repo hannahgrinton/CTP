@@ -32,6 +32,16 @@
                 <span class="social-item" id="btnEmail"><i class="fas fa-envelope-square"></i></span>
             </div>@*header__social*@
         </div>@*header__bottom*@
+        <div class="header__collapse">
+            <i class="fas fa-bars" id="btnCollapse"></i>
+            <div class="header__collapse__menu" id="menuCollapse">
+                <a class='nav-item @(ViewBag.Current == "Ebooks" ? "activeLink" : "") ' asp-controller="Home" asp-action="Ebooks" id="ebookLink">eBooks</a>
+                <a class='nav-item @(ViewBag.Current == "Ministry" ? "activeLink" : "") ' asp-controller="Home" asp-action="Ministry" id="bookLink">Ministry</a>
+                <a class='nav-item @(ViewBag.Current == "Expositions" ? "activeLink" : "") ' asp-controller="Home" asp-action="Expositions" id="studyLink">Expositions</a>
+                <a class='nav-item @(ViewBag.Current == "Booklets" ? "activeLink" : "") ' asp-controller="Home" asp-action="Booklets" id="bookletLink">Booklets</a>
+                <a class='nav-item @(ViewBag.Current == "Languages" ? "activeLink" : "") ' asp-controller="Home" asp-action="Languages" id="languageLink">Languages</a>
+            </div>
+        </div>@*header__collapse*@
     </header> @*header*@
 
     <div class="main">

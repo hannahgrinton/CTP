@@ -55,6 +55,9 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+    &__collapse {
+        display: none;
+    }
     //social links
     &__social {
         text-align: right;
@@ -96,6 +99,7 @@
 .search-button {
     border: 0;
     border-radius: 10px;
+    background-color: #ffffff00;
     cursor: pointer;
     i {
         &:hover {

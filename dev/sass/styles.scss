@@ -16,3 +16,13 @@
 @import "filter";
 //table styles
 @import "table";
+//media queries
+@import "responsive";
+
+html, body {
+    max-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,178 @@
+@media (max-width: $extra-large-screen) {
+    //large tablets
+    .content {
+        grid-template-columns: 1fr 1fr;
+        &__block {
+            width: 280px;
+            height: 180px;
+            &__overlay {
+                width: 280px;
+                margin-top: 90px;
+                //height: 50px;
+            }
+        }
+    }
+    .overlay-title {
+        font-size: $small-text;
+        padding-top: 5px;
+    }
+    .overlay-description {
+        font-size: $small-text - 2;
+        padding-top: 5px;
+    }
+    .footer {
+        font-size: $small-text -2;
+        & > * {
+            padding-right: 15px;
+        }
+    }
+}
+@media (max-width: $large-screen) {
+    //tablets
+    .bg-image {
+        height: 100%;
+        min-width: 100%;
+    }
+    .header {
+        &__bottom {
+            display: none;
+        }
+        &__collapse {
+            display: inline-block;
+            padding-left: 10px;
+            i {
+                cursor: pointer;
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+            &__menu {
+                padding-top: 10px;
+                @include display-flex();
+                flex-flow: column nowrap;
+                align-items: flex-start;
+                a {
+                    font-size: $small-text;
+                }
+                display: none;
+            }
+        }
+    }
+    .content {
+        grid-template-columns: 1fr;
+        &__block {
+            width: 280px;
+            height: 180px;
+            &__overlay {
+                width: 280px;
+                margin-top: 90px;
+                //height: 50px;
+            }
+        }
+    }
+    .overlay-title {
+        font-size: $small-text;
+        padding-top: 5px;
+    }
+    .overlay-description {
+        font-size: $small-text - 2;
+        padding-top: 5px;
+    }
+    .footer {
+        font-size: $small-text - 4;
+        & > * {
+            padding-right: 10px;
+        }
+        i {
+            font-size: $small-text - 2;
+        }
+    }
+}
+@media (max-width: $medium-screen) {
+    //small tablets & large phones
+    .header {
+        @include display-flex();
+        flex-flow: column nowrap;
+        text-align: left;
+        align-items: flex-start;
+        &__main {
+            @include display-flex();
+            flex-flow: column nowrap;
+            align-items: flex-start;
+            margin: 0;
+            &__title {
+                font-size: $large-text;
+            }
+            &__search {
+                margin-top: 10px;
+                width: 190px;
+            }
+        }
+        
+    }
+    .searchbar {
+        width: 160px;
+        font-size: $small-text;
+    }
+    .main {
+        max-width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .content {
+        &__block {
+            width: 150px;
+            height: 100px;
+            &__overlay {
+                width: 150px;
+                margin-top: 70px;
+                //height: 50px;
+            }
+        }
+    }
+    .overlay-title {
+        font-size: $small-text;
+        padding-top: 5px;
+    }
+    .overlay-description {
+        display: none;
+    }
+    .footer {
+        grid-template-columns: 1fr;
+        font-size: $small-text - 2;
+        i {
+            font-size: $small-text;
+            padding-bottom: 0;
+        }
+    }
+}
+@media (max-width: $small-screen) {
+    //phones
+    .header {
+        &__main {
+            &__title {
+                font-size: $med-small-text;
+            }
+            &__search {
+                margin-top: 10px;
+                width: 165px;
+            }
+        }
+    }
+    .searchbar {
+        width: 140px;
+        font-size: $small-text;
+    }
+    .footer {
+        font-size: $small-text - 6;
+        i {
+            font-size: $small-text - 2;
+        }
+    }
+}
+@media (max-width: $extra-small-screen) {
+    //small phones
+    
+}
