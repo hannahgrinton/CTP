@@ -1,0 +1,45 @@
+.table {
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+    @include display-flex();
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: $white;
+    border-radius: 5px;
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(200px);
+        row-gap: 40px;
+        &__item {
+            @include display-flex();
+            flex-flow: column nowrap;
+            align-items: center;
+            margin: 20px;
+            &:hover .grid-item {
+                &-title, &-author, &-price {
+                    color: $accent-color;
+                    text-decoration: none !important;
+                }
+            }
+        }
+    }
+}
+.grid-item {
+    &-image {
+        height: 200px;
+        width: 150px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    &-title, &-author, &-price {
+        color: $dark-grey;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+a:hover {
+    text-decoration: none;
+}

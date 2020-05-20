@@ -20546,6 +20546,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/ViewMinistry.cshtml",
+      "TargetPath": "Views\\Home\\ViewMinistry.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"

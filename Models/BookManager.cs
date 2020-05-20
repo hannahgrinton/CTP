@@ -8,12 +8,19 @@ namespace CTP.Models
     public class BookManager : DbContext
     {
         public DbSet<Ebook> ebooks { get; set; }
-        public DbSet<Book> ministry { get; set; }
-        public DbSet<Book> booklets { get; set; }
-        public DbSet<Book> expositions { get; set; }
+        public DbSet<Ministry> ministry { get; set; }
+        public DbSet<Booklet> booklets { get; set; }
+        public DbSet<Expositions> expositions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             optionsBuilder.UseMySQL(Connection.CONNECTION_STRING);
         }
+        //get ministry item
+        public Ministry getMinistry(int id) {
+            return ministry.Single(item => item.id == id);
+        }
+
+
+        
     }
 }

@@ -9,8 +9,6 @@
 /Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/CTP.Views.dll
 /Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/CTP.Views.pdb
 /Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/Google.Protobuf.dll
-/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
-/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll
 /Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
@@ -54,3 +52,13 @@
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Languages.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Expositions.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Ministry.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/Remotion.Linq.dll
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/System.Data.SqlClient.dll
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/System.Interactive.Async.dll
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/sni.dll
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/sni.dll
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/sni.dll
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/ViewMinistry.cshtml.g.cs

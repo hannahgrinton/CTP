@@ -20,4 +20,10 @@
         color: $dark-grey;
         font-family: $base-font;
     }
+    &__arrow {
+        color: $accent-color;
+        &:hover {
+            color: $light-color;
+        }
+    }
 }

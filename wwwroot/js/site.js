@@ -10385,6 +10385,19 @@ function _interopRequireDefault(obj) {
     console.log("click");
 });
 
+(0, _jquery2.default)("#btnRight").click(function () {
+    (0, _jquery2.default)(".listing__images__img--front").css("display", "none");
+    (0, _jquery2.default)(".listing__images__img--back").css("display", "inline-block");
+    (0, _jquery2.default)("#btnRight").addClass("disabled");
+    (0, _jquery2.default)("#btnLeft").removeClass("disabled");
+});
+(0, _jquery2.default)("#btnLeft").click(function () {
+    (0, _jquery2.default)(".listing__images__img--back").css("display", "none");
+    (0, _jquery2.default)(".listing__images__img--front").css("display", "inline-block");
+    (0, _jquery2.default)("#btnLeft").addClass("disabled");
+    (0, _jquery2.default)("#btnRight").removeClass("disabled");
+});
+
 },{"jquery":1}]},{},[2])
 
 //# sourceMappingURL=site.js.map

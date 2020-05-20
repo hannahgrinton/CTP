@@ -1,6 +1,30 @@
 @model CTP.Models.BookManager
-<div class="main__title">Ministry Books Available for Order</div>
-<div class="main__desciption">Lorem ipsum dolor sit amet or something like that</div>
-<div class="content">
-    <div class="filter"></div>
-</div>
+<div class="main__title">Ministry Books</div>
+<div class="main__desciption">Available for Order</div>
+<div class="page-content">
+    <div class="filter">
+        <span class="filter__sortby">
+            <span class="filter__sortby__text">Sort By</span>
+            <select class="filter__sortby__select">
+                <option>Title</option>
+                <option>Author</option>
+                <option>Price</option>
+            </select>@*filter__sortby__select*@
+        </span>@*filter__sortby*@
+    </div>@*filter*@
+    <div class="table">
+        <div class="table__grid">
+            @foreach (var item in Model.ministry)
+            {
+                <div class="table__grid__item">
+                    <a asp-controller="Home" asp-action="ViewMinistry" asp-route-id="@item.id">
+                        <img src="~/images/covers/ministry/@item.frontcover" class="grid-item-image">
+                        <div class="grid-item-title">@item.title</div>
+                        <div class="grid-item-author">@item.author</div>
+                        <div class="grid-item-price">$@item.price</div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>@*table*@
+</div>@*page-content*@

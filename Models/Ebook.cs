@@ -31,9 +31,9 @@ namespace CTP.Models
         [Display(Name="Image File")]
         public string imgFile {get; set;}
         //docx file name
-        [MaxLength(100)]
-        [Display(Name="DOCX File")]
-        public string docx {get; set;}
+        [MaxLength(200)]
+        [Display(Name="Amazon Link")]
+        public string amazon {get; set;}
         //epub file name
         [MaxLength(100)]
         [Display(Name="EPUB File")]

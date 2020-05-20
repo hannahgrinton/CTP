@@ -13,9 +13,9 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design/3.1.0/build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design/3.1.0/build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props')" />
+    <Import Project="/usr/local/share/dotnet/sdk/NuGetFallbackFolder/microsoft.entityframeworkcore.design/2.2.0/build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('/usr/local/share/dotnet/sdk/NuGetFallbackFolder/microsoft.entityframeworkcore.design/2.2.0/build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">/Users/hannahgrinton/.nuget/packages/microsoft.entityframeworkcore.tools/3.1.0</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">/usr/local/share/dotnet/sdk/NuGetFallbackFolder/microsoft.entityframeworkcore.tools/2.2.0</PkgMicrosoft_EntityFrameworkCore_Tools>
   </PropertyGroup>
 </Project>

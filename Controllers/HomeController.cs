@@ -46,6 +46,13 @@ namespace CTP.Controllers
             ViewBag.Current = "Expositions";
             return View(bookManager);
         }
+        
+        [Route("/ViewMinistry/{id}")]
+        public IActionResult ViewMinistry(int id) {
+            Ministry ministry = new Ministry();
+            ministry = bookManager.getMinistry(id);
+            return View(ministry);
+        }
 
         public IActionResult Languages() {
             ViewBag.Current = "Languages";

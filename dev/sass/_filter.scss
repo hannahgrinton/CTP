@@ -1,0 +1,18 @@
+.filter {
+    margin-top: 60px;
+    @include display-flex();
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    &__sortby {
+        &__text {
+            font-family: $base-font;
+            font-size: $med-small-text;
+            padding-right: 10px;
+        }
+        &__select {
+            font-family: $base-font;
+            font-size: $med-small-text;
+            width: 100px;
+        }
+    }
+}

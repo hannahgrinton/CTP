@@ -28,8 +28,12 @@ namespace CTP.Models
         public string price {get; set;}
         //png file name
         [MaxLength(100)]
-        [Display(Name="Image File")]
-        public string imgFile {get; set;}
+        [Display(Name="Front Cover Image File")]
+        public string frontcover {get; set;}
+        //png file name
+        [MaxLength(100)]
+        [Display(Name="Back Cover Image File")]
+        public string backcover {get; set;}
 
     }
 }
