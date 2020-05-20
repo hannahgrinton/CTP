@@ -304,6 +304,9 @@ a.link-block:hover .overlay-description {
         text-decoration: none;
         background-color: #acc6c9;
         color: #ffffff; }
+    .listing__content__info {
+      margin-top: 20px;
+      font-size: 12px; }
 
 .disabled {
   color: #acc6c9;

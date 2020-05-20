@@ -59,6 +59,10 @@
                 color: $white;
             }
         }
+        &__info {
+            margin-top: 20px;
+            font-size: $small-text - 2;
+        }
     }
 }
 .disabled {

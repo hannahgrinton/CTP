@@ -10,7 +10,7 @@ namespace CTP.Models
         public DbSet<Ebook> ebooks { get; set; }
         public DbSet<Ministry> ministry { get; set; }
         public DbSet<Booklet> booklets { get; set; }
-        public DbSet<Expositions> expositions { get; set; }
+        public DbSet<Exposition> expositions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             optionsBuilder.UseMySQL(Connection.CONNECTION_STRING);
@@ -20,6 +20,10 @@ namespace CTP.Models
             return ministry.Single(item => item.id == id);
         }
 
+        //get exposition item
+        public Exposition getExposition(int id) {
+            return expositions.Single(item => item.id == id);
+        }
 
         
     }

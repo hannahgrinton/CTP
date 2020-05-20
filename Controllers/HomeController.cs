@@ -54,6 +54,13 @@ namespace CTP.Controllers
             return View(ministry);
         }
 
+        [Route("/ViewExposition/{id}")]
+        public IActionResult ViewExposition(int id) {
+            Exposition expositions = new Exposition();
+            expositions = bookManager.getExposition(id);
+            return View(expositions);
+        }
+
         public IActionResult Languages() {
             ViewBag.Current = "Languages";
             return View(bookManager);
