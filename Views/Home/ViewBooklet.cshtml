@@ -1,0 +1,26 @@
+@model CTP.Models.Booklet
+
+<a class="main__arrow" asp-controller="Home" asp-action="Booklets" style="cursor: pointer;"><i class="fas fa-arrow-left" style="font-size: 34px; float: left;"></i></a><div class="main__title">View Booklet</div>
+<div class="page-content">
+    <div class="listing">
+        <div class="listing__images">
+            <img src="~/images/covers/booklets/@Model.frontcover" class="listing__images__img listing__images__img--front">
+            <img src="~/images/covers/booklets/@Model.backcover" class="listing__images__img listing__images__img--back">
+            <div class="listing__images__buttons">
+                <i class="fas fa-caret-square-left disabled" id="btnLeft"></i><i class="fas fa-caret-square-right" id="btnRight"></i>
+            </div>     
+        </div>
+        <div class="listing__content">
+            <div class="listing__content__title">@Model.title</div>
+            <div class="listing__content__author">@Model.author</div>
+            <div class="listing__content__price">$@Model.price USD</div>
+            <div class="listing__content__code">Item Code: @Model.code</div>
+            
+            <a class="listing__content__button" href="mailto:christiantruthpublishing@gmail.com?cc=rjboulard@gmail.com&subject=CTP%20Order:%20@(Model.code)" target="_blank">Email to Order</a>
+            <div class="listing__content__info">
+                Standard book and booklet size is 5-3/16" wide (130mm) x 7-1/2" high (190mm). <br>
+                Study Version book size is approximately 6-5/16" wide (150mm) x 8-1/4" high (200mm).
+            </div>
+        </div>
+    </div>
+</div>

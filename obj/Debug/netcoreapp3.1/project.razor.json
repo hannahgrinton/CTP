@@ -20541,6 +20541,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/ViewBooklet.cshtml",
+      "TargetPath": "Views\\Home\\ViewBooklet.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"

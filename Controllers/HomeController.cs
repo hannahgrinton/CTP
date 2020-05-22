@@ -56,9 +56,16 @@ namespace CTP.Controllers
 
         [Route("/ViewExposition/{id}")]
         public IActionResult ViewExposition(int id) {
-            Exposition expositions = new Exposition();
-            expositions = bookManager.getExposition(id);
-            return View(expositions);
+            Exposition exposition = new Exposition();
+            exposition = bookManager.getExposition(id);
+            return View(exposition);
+        }
+
+        [Route("/ViewBooklet/{id}")]
+        public IActionResult ViewBooklet(int id) {
+            Booklet booklet = new Booklet();
+            booklet = bookManager.getBooklet(id);
+            return View(booklet);
         }
 
         public IActionResult Languages() {

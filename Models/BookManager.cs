@@ -25,6 +25,11 @@ namespace CTP.Models
             return expositions.Single(item => item.id == id);
         }
 
+        //get booklet item
+        public Booklet getBooklet(int id) {
+            return booklets.Single(item => item.id == id);
+        }
+
         
     }
 }

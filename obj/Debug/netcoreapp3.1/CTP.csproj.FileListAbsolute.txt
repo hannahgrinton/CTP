@@ -63,3 +63,4 @@
 /Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/ViewMinistry.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/ViewExposition.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/ViewBooklet.cshtml.g.cs
