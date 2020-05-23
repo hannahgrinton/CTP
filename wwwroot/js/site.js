@@ -10378,24 +10378,140 @@ function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
 }
 
+//navigation collapse functionality
 (0, _jquery2.default)("#btnCollapse").click(function () {
     (0, _jquery2.default)("#menuCollapse").slideToggle('medium', function () {
         if ((0, _jquery2.default)(this).is(':visible')) (0, _jquery2.default)(this).css('display', 'flex');
     });
     console.log("click");
 });
-
+//image navigation
 (0, _jquery2.default)("#btnRight").click(function () {
     (0, _jquery2.default)(".listing__images__img--front").css("display", "none");
     (0, _jquery2.default)(".listing__images__img--back").css("display", "inline-block");
     (0, _jquery2.default)("#btnRight").addClass("disabled");
     (0, _jquery2.default)("#btnLeft").removeClass("disabled");
 });
+//image navigation
 (0, _jquery2.default)("#btnLeft").click(function () {
     (0, _jquery2.default)(".listing__images__img--back").css("display", "none");
     (0, _jquery2.default)(".listing__images__img--front").css("display", "inline-block");
     (0, _jquery2.default)("#btnLeft").addClass("disabled");
     (0, _jquery2.default)("#btnRight").removeClass("disabled");
+});
+//item sorting on the ministry page
+(0, _jquery2.default)("#ministry-sort").change(function () {
+    var list = (0, _jquery2.default)("#tblMinistry");
+    var listitems = list.children(".table__grid__item");
+    if ((0, _jquery2.default)(this).val() == "title") {
+        //sort by title
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+    if ((0, _jquery2.default)(this).val() == "author") {
+        //sort by author
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+    if ((0, _jquery2.default)(this).val() == "price") {
+        //sort by price
+        listitems.sort(function (a, b) {
+            var compA = parseFloat((0, _jquery2.default)(a).find(".grid-item-price").text().replace(/\$/g, ""));
+            var compB = parseFloat((0, _jquery2.default)(b).find(".grid-item-price").text().replace(/\$/g, ""));
+            return compA - compB;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+});
+//item sorting on the expositions page
+(0, _jquery2.default)("#exp-sort").change(function () {
+    var list = (0, _jquery2.default)("#tblExp");
+    var listitems = list.children(".table__grid__item");
+    if ((0, _jquery2.default)(this).val() == "title") {
+        //sort by title
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+    if ((0, _jquery2.default)(this).val() == "author") {
+        //sort by author
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+    if ((0, _jquery2.default)(this).val() == "price") {
+        //sort by price
+        listitems.sort(function (a, b) {
+            var compA = parseFloat((0, _jquery2.default)(a).find(".grid-item-price").text().replace(/\$/g, ""));
+            var compB = parseFloat((0, _jquery2.default)(b).find(".grid-item-price").text().replace(/\$/g, ""));
+            return compA - compB;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+    if ((0, _jquery2.default)(this).val() == "nonumbers") {
+        //sort by title ignoring "1st"/"2nd" in string
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-title").text().toUpperCase().replace("1ST ", "").replace("2ND ", "").replace("-", "").replace(" ", "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-title").text().toUpperCase().replace("1ST ", "").replace("2ND ", "").replace("-", "").replace(" ", "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+    if ((0, _jquery2.default)(this).val() == "biblically") {
+        //sort biblically
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-code").text().replace("RB-", "").replace("SVB-", "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-code").text().replace("RB-", "").replace("SVB-", "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+});
+//item sorting on the booklet page
+(0, _jquery2.default)("#booklet-sort").change(function () {
+    var list = (0, _jquery2.default)("#tblBooklets");
+    var listitems = list.children(".table__grid__item");
+    if ((0, _jquery2.default)(this).val() == "title") {
+        //sort by title
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+    if ((0, _jquery2.default)(this).val() == "author") {
+        //sort by author
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+    if ((0, _jquery2.default)(this).val() == "price") {
+        //sort by price
+        listitems.sort(function (a, b) {
+            var compA = parseFloat((0, _jquery2.default)(a).find(".grid-item-price").text().replace(/\$/g, ""));
+            var compB = parseFloat((0, _jquery2.default)(b).find(".grid-item-price").text().replace(/\$/g, ""));
+            return compA - compB;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
 });
 
 },{"jquery":1}]},{},[2])

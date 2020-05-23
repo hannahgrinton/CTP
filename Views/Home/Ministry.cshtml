@@ -5,16 +5,16 @@
     <div class="filter">
         <span class="filter__sortby">
             <span class="filter__sortby__text">Sort By</span>
-            <select class="filter__sortby__select">
-                <option>Title</option>
-                <option>Author</option>
-                <option>Price</option>
+            <select class="filter__sortby__select" id="ministry-sort">
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+                <option value="price">Price</option>
             </select>@*filter__sortby__select*@
         </span>@*filter__sortby*@
     </div>@*filter*@
     <div class="table">
-        <div class="table__grid">
-            @foreach (var item in Model.ministry)
+        <div class="table__grid" id="tblMinistry">
+            @foreach (var item in Model.ministry.OrderBy(x => (x.title.Replace(@"""", ""))))
             {
                 <div class="table__grid__item">
                     <a asp-controller="Home" asp-action="ViewMinistry" asp-route-id="@item.id">
