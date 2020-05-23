@@ -26,11 +26,11 @@ namespace CTP.Models
         [Display(Name="Image File")]
         public string imgFile {get; set;}
         //docx file name
-        [MaxLength(250)]
+        [MaxLength(350)]
         [Display(Name="Amazon Link")]
         public string amazon {get; set;}
         //epub file name
-        [MaxLength(350)]
+        [MaxLength(200)]
         [Display(Name="EPUB File")]
         public string epub {get; set;}
         //mobi file name
