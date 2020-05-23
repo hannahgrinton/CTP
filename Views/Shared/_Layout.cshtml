@@ -28,8 +28,8 @@
                 <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Languages" ? "activeLink" : "") ' asp-controller="Home" asp-action="Languages" id="languageLink">Languages</a></span>
             </nav>@*header__nav*@
             <div class="header__social">
-                <span class="social-item" id="btnPhone"><i class="fas fa-phone-square"></i></span>
-                <span class="social-item" id="btnEmail"><i class="fas fa-envelope-square"></i></span>
+                <a href="tel:1 (705) 375-5812"><span class="social-item" id="btnPhone"><i class="fas fa-phone-square"></i></span></a>
+                <a href="mailto:christiantruthpublishing@gmail.com?cc=rjboulard@gmail.com" target="_blank"><span class="social-item" id="btnEmail"><i class="fas fa-envelope-square"></i></span></a>
             </div>@*header__social*@
         </div>@*header__bottom*@
         <div class="header__collapse">
@@ -59,9 +59,9 @@
             </span>
         </div>@*footer__address*@
         <div class="footer__social">
-            <span class="footer__social__item"><i class="fas fa-phone"></i>1 (705) 375-5812<br></span>
-            <span class="footer__social__item"><i class="fas fa-at"></i><a href="mailto:rjboulard@gmail.com">rjboulard@gmail.com</a><br></span>
-            <span class="footer__social__item"><i class="fas fa-at"></i><a href="mailto:christiantruthpublishing@gmail.com">christiantruthpublishing@gmail.com</a></span>
+            <span class="footer__social__item"><i class="fas fa-phone"></i><a href="tel:1 (705) 375-5812">1 (705) 375-5812</a><br></span>
+            <span class="footer__social__item"><i class="fas fa-at"></i><a href="mailto:rjboulard@gmail.com" target="_blank">rjboulard@gmail.com</a><br></span>
+            <span class="footer__social__item"><i class="fas fa-at"></i><a href="mailto:christiantruthpublishing@gmail.com" target="_blank">christiantruthpublishing@gmail.com</a></span>
         </div>@*footer__social*@
         <div class="footer__admin">
             <span class="footer__admin__item"><i class="fas fa-sign-in-alt"></i><a href="#" target="_blank">Administrative Login</a></span>

@@ -61,6 +61,12 @@
     //social links
     &__social {
         text-align: right;
+        a {
+            color: $white;
+            &:hover {
+                color: $accent-color;
+            }
+        }
     }
     //nav links
     &__nav {

@@ -58,6 +58,10 @@
     display: none; }
   .header__social {
     text-align: right; }
+    .header__social a {
+      color: #ffffff; }
+      .header__social a:hover {
+        color: #688386; }
   .header__nav {
     display: -webkit-box;
     display: -moz-box;
