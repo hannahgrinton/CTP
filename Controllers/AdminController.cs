@@ -12,9 +12,25 @@ namespace CTP.Controllers {
             bookManager = myManager;
         }
         public IActionResult Index() {
-            if (HttpContext.Session.GetString("auth") != "true") {
-                return RedirectToAction("Index", "Login");
-            }
+            // if (HttpContext.Session.GetString("auth") != "true") {
+            //     return RedirectToAction("Index", "Login");
+            // }
+            return View(bookManager);
+        }
+        public IActionResult Ebooks() {
+            ViewBag.Current = "Ebooks";
+            return View(bookManager);
+        }
+        public IActionResult Ministry() {
+            ViewBag.Current = "Ministry";
+            return View(bookManager);
+        }
+        public IActionResult Expositions() {
+            ViewBag.Current = "Booklets";
+            return View(bookManager);
+        }
+        public IActionResult Booklets() {
+            ViewBag.Current = "Expositions";
             return View(bookManager);
         }
         public IActionResult Logout() {

@@ -20526,6 +20526,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/Booklets.cshtml",
+      "TargetPath": "Views\\Admin\\Booklets.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/Expositions.cshtml",
+      "TargetPath": "Views\\Admin\\Expositions.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Expositions.cshtml",
       "TargetPath": "Views\\Home\\Expositions.cshtml",
       "FileKind": "mvc"
@@ -20548,6 +20558,11 @@
     {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/Ministry.cshtml",
+      "TargetPath": "Views\\Admin\\Ministry.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20598,6 +20613,11 @@
     {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Login/Index.cshtml",
       "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/Ebook.cshtml",
+      "TargetPath": "Views\\Admin\\Ebook.cshtml",
       "FileKind": "mvc"
     },
     {
