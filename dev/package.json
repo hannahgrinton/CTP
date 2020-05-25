@@ -1,9 +1,9 @@
 {
-  "name": "sass-babel-with-gulp-nscc",
+  "name": "ctp-project-dev",
   "version": "1.0.0",
-  "description": "Starter template for an ES2015 app implementing Sass/Babel and Gulp",
+  "description": "CTP Project Development",
   "main": "app.js",
-  "author": "Sean Morrow / NSCC Truro Campus",
+  "author": "Hannah Grinton",
   "license": "",
   "dependencies": {
     "jquery": "^3.5.1"

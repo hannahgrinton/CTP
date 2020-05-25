@@ -10513,6 +10513,29 @@ function _interopRequireDefault(obj) {
         (0, _jquery2.default)(list).append(listitems);
     }
 });
+//item sorting on the ebook page
+(0, _jquery2.default)("#ebook-sort").change(function () {
+    var list = (0, _jquery2.default)("#tblEbook");
+    var listitems = list.children(".table__grid__item");
+    if ((0, _jquery2.default)(this).val() == "title") {
+        //sort by title
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "").replace("1ST ", "").replace("2ND ", "").replace("3RD ", "").replace("-", "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "").replace("1ST ", "").replace("2ND ", "").replace("3RD ", "").replace("-", "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+    if ((0, _jquery2.default)(this).val() == "author") {
+        //sort by author
+        listitems.sort(function (a, b) {
+            var compA = (0, _jquery2.default)(a).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            return compA < compB ? -1 : compA > compB ? 1 : 0;
+        });
+        (0, _jquery2.default)(list).append(listitems);
+    }
+});
 
 },{"jquery":1}]},{},[2])
 

@@ -30,6 +30,9 @@ namespace CTP.Models
             return booklets.Single(item => item.id == id);
         }
 
-        
+        //get ebook item
+        public Ebook getEbook(int id) {
+            return ebooks.Single(item => item.id == id);
+        }
     }
 }

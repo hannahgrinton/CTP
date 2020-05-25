@@ -68,6 +68,13 @@ namespace CTP.Controllers
             return View(booklet);
         }
 
+        [Route("/ViewEbook/{id}")]
+        public IActionResult ViewEbook(int id) {
+            Ebook ebook = new Ebook();
+            ebook = bookManager.getEbook(id);
+            return View(ebook);
+        }
+
         public IActionResult Languages() {
             ViewBag.Current = "Languages";
             return View(bookManager);

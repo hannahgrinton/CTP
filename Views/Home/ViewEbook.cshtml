@@ -1,0 +1,18 @@
+@model CTP.Models.Ebook
+
+<a class="main__arrow" asp-controller="Home" asp-action="Ebooks" style="cursor: pointer;"><i class="fas fa-arrow-left" style="font-size: 34px; float: left;"></i></a><div class="main__title">View eBook</div>
+<div class="page-content">
+    <div class="listing">
+        <div class="listing__images" style="margin-bottom: 40px;">
+            <img src="~/images/covers/ebooks/@Model.imgFile" class="listing__images__img listing__images__img--front">  
+        </div>
+        <div class="listing__content">
+            <div class="listing__content__title">@Model.title</div>
+            <div class="listing__content__author" style="margin-bottom: 20px;">@Model.author</div>
+            <a class="listing__content__button" href="@Model.amazon" target="_blank">Order on Amazon</a>
+            <div class="listing__content__info">
+                All contributions from Kindle orders on Amazon are donated to our Brother in Christ, Bruce Anstey.
+            </div>
+        </div>
+    </div>
+</div>

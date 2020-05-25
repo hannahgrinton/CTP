@@ -135,3 +135,26 @@ $("#booklet-sort").change(function() {
         $(list).append(listitems);
     }
 });
+//item sorting on the ebook page
+$("#ebook-sort").change(function() {
+    let list = $("#tblEbook");
+    let listitems = list.children(".table__grid__item");
+    if ($(this).val() == "title") {
+        //sort by title
+        listitems.sort(function(a,b) {
+            let compA = $(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "").replace("1ST ", "").replace("2ND ", "").replace("3RD ", "").replace("-", "");
+            let compB = $(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "").replace("1ST ", "").replace("2ND ", "").replace("3RD ", "").replace("-", "");
+            return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+        });
+        $(list).append(listitems);
+    }
+    if ($(this).val() == "author") {
+        //sort by author
+        listitems.sort(function(a,b) {
+            let compA = $(a).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            let compB = $(b).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
+            return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+        });
+        $(list).append(listitems);
+    }
+});

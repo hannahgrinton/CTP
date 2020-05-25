@@ -20551,6 +20551,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/_Layout.cshtml",
+      "TargetPath": "Views\\Admin\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/ViewMinistry.cshtml",
       "TargetPath": "Views\\Home\\ViewMinistry.cshtml",
       "FileKind": "mvc"
@@ -20576,6 +20581,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/ViewEbook.cshtml",
+      "TargetPath": "Views\\Home\\ViewEbook.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Ebooks.cshtml",
       "TargetPath": "Views\\Home\\Ebooks.cshtml",
       "FileKind": "mvc"
@@ -20586,8 +20596,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Login/Index.cshtml",
+      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/Index.cshtml",
+      "TargetPath": "Views\\Admin\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
