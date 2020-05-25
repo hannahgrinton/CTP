@@ -68,3 +68,7 @@
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/CTP.dll
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/CTP.pdb
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/CTP.genruntimeconfig.cache
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/Booklets.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/Ebooks.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/Expositions.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/Ministry.cshtml.g.cs

@@ -336,6 +336,37 @@ a.link-block:hover .overlay-description {
     width: 100px;
     border: none; }
 
+.add-button {
+  background-color: #ffffff;
+  color: #688386;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  margin-right: 10px; }
+  .add-button:hover {
+    text-decoration: none;
+    background-color: #acc6c9;
+    color: #ffffff; }
+
+.grid-item-buttons {
+  margin-top: 15px; }
+
+.edit-button {
+  background-color: #acc6c9;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px; }
+  .edit-button:hover {
+    text-decoration: none;
+    background-color: #688386;
+    color: #ffffff; }
+
+.delete-button {
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px; }
+
 .table {
   margin-top: 40px;
   width: 100%;

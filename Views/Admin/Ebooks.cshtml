@@ -4,6 +4,7 @@
 <div class="page-content">
     <div class="filter">
         <span class="filter__sortby">
+            <a asp-controller="Admin" asp-action="AddEbook" class="add-button">Add New</a>
             <span class="filter__sortby__text">Sort By</span>
             <select class="filter__sortby__select" id="ebook-sort">
                 <option value="title">Title</option>
@@ -16,15 +17,13 @@
             @foreach (var item in Model.ebooks.OrderBy(x => x.title.Replace(@"""", "").Replace("1st ", "").Replace("2nd ", "").Replace("3rd ", "").Replace("-", "")))
             {
                 <div class="table__grid__item">
-                    <a asp-controller="Home" asp-action="ViewEbook" asp-route-id="@item.id">
-                        <img src="~/images/covers/ebooks/@item.imgFile" class="grid-item-image">
-                        <div class="grid-item-title">@item.title</div>
-                        <div class="grid-item-author">@item.author</div>
-                        <div class="grid-item-buttons">
-                            <a asp-controller="Admin" asp-action="EditEbook" asp-route-id="@item.id" class="edit-button">Edit</a>
-                            <a asp-controller="Admin" asp-action="DeleteEbook" asp-route-id="@item.id" class="delete-button">Delete</a>
-                        </div>
-                    </a>
+                    <img src="~/images/covers/ebooks/@item.imgFile" class="grid-item-image">
+                    <div class="grid-item-title">@item.title.Substring(0, 10)...</div>
+                    <div class="grid-item-author">@item.author</div>
+                    <div class="grid-item-buttons">
+                        <a asp-controller="Admin" asp-action="EditEbook" asp-route-id="@item.id" class="edit-button">Edit</a>
+                        <a asp-controller="Admin" asp-action="DeleteEbook" asp-route-id="@item.id" class="delete-button btn-warning">Delete</a>
+                    </div>
                 </div>
             }
         </div>
