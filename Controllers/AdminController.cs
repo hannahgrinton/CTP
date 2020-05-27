@@ -15,6 +15,7 @@ namespace CTP.Controllers {
             // if (HttpContext.Session.GetString("auth") != "true") {
             //     return RedirectToAction("Index", "Login");
             // }
+            ViewBag.Current = "";
             return View(bookManager);
         }
         public IActionResult Ebooks() {
@@ -32,6 +33,11 @@ namespace CTP.Controllers {
         public IActionResult Booklets() {
             ViewBag.Current = "Expositions";
             return View(bookManager);
+        }
+        public IActionResult AddEbook() {
+            ViewBag.Current = "";
+            Ebook ebook = new Ebook();
+            return View(ebook);
         }
         public IActionResult Logout() {
             //logs user out and reqirects to login page

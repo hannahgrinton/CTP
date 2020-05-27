@@ -27,6 +27,12 @@ namespace CTP.Controllers
             return View(bookManager);
         }
 
+        public IActionResult About()
+        {
+            ViewBag.Current = "About";
+            return View();
+        }
+
         public IActionResult Ebooks() {
             ViewBag.Current = "Ebooks";
             return View(bookManager);

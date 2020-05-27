@@ -158,3 +158,21 @@ $("#ebook-sort").change(function() {
         $(list).append(listitems);
     }
 });
+//image file name update
+$("#imgFile").change(function() {
+    console.log($(this).val());
+    var filename = $(this).val().split("\\").pop();
+    $("#message").text(filename);
+});
+//epub file name update
+$("#epubFile").change(function() {
+    console.log($(this).val());
+    var filename = $(this).val().split("\\").pop();
+    $("#epub-message").text(filename);
+});
+//mobi file name update
+$("#mobiFile").change(function() {
+    console.log($(this).val());
+    var filename = $(this).val().split("\\").pop();
+    $("#mobi-message").text(filename);
+});

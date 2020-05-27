@@ -1,0 +1,61 @@
+@model CTP.Models.Ebook
+<div class="main__title">eBooks</div>
+<div class="main__desciption">Add New</div>
+<div class="page-content">
+    <form class="form" >
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" asp-for="title" class="form-control" maxlength="200" required>
+            <span asp-validation-for="title" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label for="version">Version</label>
+            <input type="text" asp-for="version" class="form-control" maxlength="10" required style="width: 100px;">
+            <span asp-validation-for="version" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" asp-for="author" class="form-control" maxlength="200" required>
+            <span asp-validation-for="author" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label for="amazon">Amazon Link</label>
+            <input type="text" asp-for="amazon" class="form-control" maxlength="350" required>
+            <span asp-validation-for="amazon" class="text-danger" />
+        </div>
+        <div class="form-group" style="text-align: left;">
+            <label for="imgFile">Image file</label>
+            <div class="form-group">
+                <label class="btn btn-light" style="cursor: pointer;">
+                    Browse<input type="file" id="imgFile" name="imgFile" hidden required>
+                </label>
+                <span>Selected File: <span id="message" class="filename-text">No File Selected</span></span>
+                <span asp-validation-for="imgFile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group" style="text-align: left;">
+            <label for="epub">ePub file</label>
+            <div class="form-group">
+                <label class="btn btn-light" style="cursor: pointer;">
+                    Browse<input type="file" id="epubFile" name="epub" hidden required>
+                </label>
+                <span>Selected File: <span id="epub-message" class="filename-text">No File Selected</span></span>
+                <span asp-validation-for="epub" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group" style="text-align: left;">
+            <label for="mobi">MOBI file</label>
+            <div class="form-group">
+                <label class="btn btn-light" style="cursor: pointer;">
+                    Browse<input type="file" id="mobiFile" name="mobi" hidden required>
+                </label>
+                <span>Selected File: <span id="mobi-message" class="filename-text">No File Selected</span></span>
+                <span asp-validation-for="mobi" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input style="float: right; margin-bottom: 80px;" class="add-button" type="submit" value="Add">
+        </div>
+    </form>
+
+</div>

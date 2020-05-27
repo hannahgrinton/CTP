@@ -9,16 +9,49 @@
     padding-right: 60px;
     background-color: $bg-color;
     overflow-x: hidden;
-    text-align: center;
+    //text-align: center;
     &__title {
         font-size: $extra-large-text;
         color: $dark-grey;
         font-family: $title-font;
+        &--about {
+            font-size: $extra-large-text + 16;
+        }
+        &--homepage {
+            font-size: $extra-large-text + 16;
+            padding-left: +40px;
+        }
     }
     &__description {
         font-size: $med-large-text;
         color: $dark-grey;
         font-family: $base-font;
+        &--about {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: $text-bg-color;
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 5px;
+            margin-bottom: 40px;
+        }
+        &__text {
+            text-align: justify;
+            font-size: $small-text;
+            padding-right: 40px;
+        }
+        &__list {
+            font-size: $small-text !important;
+            text-align: justify !important;
+            li {
+                padding-top: 10px;
+                .bold {
+                    font-weight: 700;
+                }
+            }
+        }
+
     }
     &__arrow {
         color: $accent-color;
