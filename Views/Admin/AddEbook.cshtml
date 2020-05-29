@@ -1,7 +1,7 @@
 @model CTP.Models.Ebook
-<div class="main__title">eBooks</div>
-<div class="main__description">Add New</div>
-<div class="page-content">
+<a class="main__arrow" asp-controller="Admin" asp-action="Ebooks" style="cursor: pointer;"><i class="fas fa-arrow-left" style="font-size: 34px; float: left;"></i></a><div class="main__title main__title--listing">eBooks</div>
+<div class="main__description" style="margin-left: +100px;">Add New</div>
+<div class="page-content" style="margin-left: +100px;">
     <form enctype="multipart/form-data" class="form" method="post" asp-controller="Admin" asp-action="AddEbookSubmit">
         <div class="form-group">
             <label for="title">Title</label>
