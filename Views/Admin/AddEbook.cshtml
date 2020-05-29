@@ -2,25 +2,25 @@
 <div class="main__title">eBooks</div>
 <div class="main__description">Add New</div>
 <div class="page-content">
-    <form class="form" >
+    <form enctype="multipart/form-data" class="form" method="post" asp-controller="Admin" asp-action="AddEbookSubmit">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" asp-for="title" class="form-control" maxlength="200" required>
+            <input type="text" asp-for="title" class="form-control input" maxlength="200" required>
             <span asp-validation-for="title" class="text-danger" />
         </div>
         <div class="form-group">
             <label for="version">Version</label>
-            <input type="text" asp-for="version" class="form-control" maxlength="10" required style="width: 100px;">
+            <input type="text" asp-for="version" class="form-control input" maxlength="10" required style="width: 100px;">
             <span asp-validation-for="version" class="text-danger" />
         </div>
         <div class="form-group">
             <label for="author">Author</label>
-            <input type="text" asp-for="author" class="form-control" maxlength="200" required>
+            <input type="text" asp-for="author" class="form-control input" maxlength="200" required>
             <span asp-validation-for="author" class="text-danger" />
         </div>
         <div class="form-group">
             <label for="amazon">Amazon Link</label>
-            <input type="text" asp-for="amazon" class="form-control" maxlength="350" required>
+            <input type="text" asp-for="amazon" class="form-control input" maxlength="350" required>
             <span asp-validation-for="amazon" class="text-danger" />
         </div>
         <div class="form-group" style="text-align: left;">
@@ -37,7 +37,7 @@
             <label for="epub">ePub file</label>
             <div class="form-group">
                 <label class="btn btn-light" style="cursor: pointer;">
-                    Browse<input type="file" id="epubFile" name="epub" hidden required>
+                    Browse<input type="file" id="epub" name="epub" hidden required>
                 </label>
                 <span>Selected File: <span id="epub-message" class="filename-text">No File Selected</span></span>
                 <span asp-validation-for="epub" class="text-danger"></span>
@@ -47,7 +47,7 @@
             <label for="mobi">MOBI file</label>
             <div class="form-group">
                 <label class="btn btn-light" style="cursor: pointer;">
-                    Browse<input type="file" id="mobiFile" name="mobi" hidden required>
+                    Browse<input type="file" id="mobi" name="mobi" hidden required>
                 </label>
                 <span>Selected File: <span id="mobi-message" class="filename-text">No File Selected</span></span>
                 <span asp-validation-for="mobi" class="text-danger"></span>

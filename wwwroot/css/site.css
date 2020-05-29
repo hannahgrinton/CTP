@@ -202,6 +202,8 @@
     .main__title--homepage {
       font-size: 46px;
       padding-left: +40px; }
+    .main__title--listing {
+      margin-left: +100px; }
   .main__description {
     font-size: 22px;
     color: #2b2b2b;
@@ -215,6 +217,8 @@
       margin-top: 40px;
       border-radius: 5px;
       margin-bottom: 40px; }
+    .main__description--admin {
+      margin-left: +40px; }
     .main__description__text {
       text-align: justify;
       font-size: 14px;
@@ -441,11 +445,14 @@ a:hover {
 
 .form {
   text-align: left;
-  margin-left: 80px;
-  margin-right: 80px;
-  margin-bottom: 80px; }
+  margin-bottom: 80px;
+  margin-top: 40px;
+  max-width: 410px; }
   .form-group {
     text-align: left !important; }
+
+.input {
+  max-width: 400px; }
 
 @media (max-width: 1200px) {
   .content {

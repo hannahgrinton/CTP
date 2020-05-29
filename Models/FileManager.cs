@@ -23,7 +23,7 @@ namespace CTP.Models
         public const int ERROR_SAVE = 4;
         public const int SUCCESS = 5;
         //File upload filesize limit
-        private const int UPLOADLIMIT = 4194304;
+        private const int UPLOADLIMIT = 8388608;//4194304;
         //filename string passed in
         public string fileName { get; set; } = "";
         IWebHostEnvironment environment; 
@@ -44,14 +44,16 @@ namespace CTP.Models
             if (file != null) {
                 //check to see what type of file has been uploaded
                 string contentType = file.ContentType;
-                if((contentType == "file/epub") || (contentType == "file/mobi")) {
+                Console.WriteLine("\n\n\ncontent type: " + file.ContentType);
+                if((contentType == "application/epub+zip") || (contentType == "application/octet-stream") || (contentType == "application/x-mobipocket-ebook")) {
                     //check the size 
                     long size= file.Length;
-                    if ((size > 0) && (size < UPLOADLIMIT)) {
+                    Console.WriteLine("\n\n\nfile size: " + size);
+                    if (size < UPLOADLIMIT) {
                         //get the filename of uploaded file 
                         fileName = Path.GetFileName(file.FileName);
                         //ERROR CHECK length of file name
-                        if (fileName.Length <= 100) {
+                        if (fileName.Length <= 200) {
                             //ready to save the file
                             if (System.IO.File.Exists(fullPath + fileName)) {
                                 //if the file already exists, add the date to the name to protect it

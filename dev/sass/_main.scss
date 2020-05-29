@@ -21,6 +21,9 @@
             font-size: $extra-large-text + 16;
             padding-left: +40px;
         }
+        &--listing {
+            margin-left: +100px;
+        }
     }
     &__description {
         font-size: $med-large-text;
@@ -35,6 +38,9 @@
             margin-top: 40px;
             border-radius: 5px;
             margin-bottom: 40px;
+        }
+        &--admin {
+            margin-left: +40px;
         }
         &__text {
             text-align: justify;

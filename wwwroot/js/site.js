@@ -10543,13 +10543,13 @@ function _interopRequireDefault(obj) {
     (0, _jquery2.default)("#message").text(filename);
 });
 //epub file name update
-(0, _jquery2.default)("#epubFile").change(function () {
+(0, _jquery2.default)("#epub").change(function () {
     console.log((0, _jquery2.default)(this).val());
     var filename = (0, _jquery2.default)(this).val().split("\\").pop();
     (0, _jquery2.default)("#epub-message").text(filename);
 });
 //mobi file name update
-(0, _jquery2.default)("#mobiFile").change(function () {
+(0, _jquery2.default)("#mobi").change(function () {
     console.log((0, _jquery2.default)(this).val());
     var filename = (0, _jquery2.default)(this).val().split("\\").pop();
     (0, _jquery2.default)("#mobi-message").text(filename);

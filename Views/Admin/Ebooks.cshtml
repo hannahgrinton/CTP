@@ -16,9 +16,9 @@
         <div class="table__grid" id="tblEbook">
             @foreach (var item in Model.ebooks.OrderBy(x => x.title.Replace(@"""", "").Replace("1st ", "").Replace("2nd ", "").Replace("3rd ", "").Replace("-", "")))
             {
-                <div class="table__grid__item">
+                <div class="table__grid__item" style="margin: 60px;">
                     <img src="~/images/covers/ebooks/@item.imgFile" class="grid-item-image">
-                    <div class="grid-item-title">@item.title.Substring(0, 10)...</div>
+                    <div class="grid-item-title">@item.title.Substring(0, 15)...</div>
                     <div class="grid-item-author">@item.author</div>
                     <div class="grid-item-buttons">
                         <a asp-controller="Admin" asp-action="EditEbook" asp-route-id="@item.id" class="edit-button">Edit</a>

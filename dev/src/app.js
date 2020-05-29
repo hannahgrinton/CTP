@@ -165,13 +165,13 @@ $("#imgFile").change(function() {
     $("#message").text(filename);
 });
 //epub file name update
-$("#epubFile").change(function() {
+$("#epub").change(function() {
     console.log($(this).val());
     var filename = $(this).val().split("\\").pop();
     $("#epub-message").text(filename);
 });
 //mobi file name update
-$("#mobiFile").change(function() {
+$("#mobi").change(function() {
     console.log($(this).val());
     var filename = $(this).val().split("\\").pop();
     $("#mobi-message").text(filename);

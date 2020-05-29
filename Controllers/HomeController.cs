@@ -14,11 +14,10 @@ namespace CTP.Controllers
     public class HomeController : Controller
     {
         private BookManager bookManager;
-        // private IWebHostEnvironment environment;
+        
         public HomeController(BookManager myManager)
         {
             bookManager = myManager;
-            // environment = env;
         }
 
         public IActionResult Index()
