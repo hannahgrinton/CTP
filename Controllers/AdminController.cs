@@ -95,6 +95,38 @@ namespace CTP.Controllers {
             
 
         }
+        
+        [Route("/DeleteEbook/{id}")]
+        public IActionResult DeleteEbook(int id) {
+            Ebook ebook = new Ebook();
+            ebook = bookManager.getEbook(id);
+            return View(ebook);
+        }
+        [HttpPost]
+        public IActionResult DeleteEbookSubmit(Ebook ebook) {
+            ebook = bookManager.getEbook(ebook.id);
+            ImageManager imageManager = new ImageManager(environment, "images/covers/ebooks");
+            FileManager epubManager = new FileManager(environment, "ebooks/epub");
+            FileManager mobiManager = new FileManager(environment, "ebooks/mobi");
+            bool result = imageManager.deleteImage(ebook.imgFile);
+            if (result) {
+                bool epubResult = epubManager.deleteFile(ebook.epub);
+                if (epubResult) {
+                    bool mobiResult = mobiManager.deleteFile(ebook.mobi);
+                    if (mobiResult) {
+                        bookManager.Remove(ebook);
+                        bookManager.SaveChanges();
+                    } else {
+                        Console.WriteLine("\n\n\n***There has been an error deleting the mobi file!***\n\n\n");
+                    }
+                } else {
+                    Console.WriteLine("\n\n\n***There has been an error deleting the epub file!***\n\n\n");
+                }
+            } else {
+                Console.WriteLine("\n\n\n***There has been an error deleting the image file!***\n\n\n");
+            }
+            return RedirectToAction("Ebooks");
+        }
         public IActionResult Logout() {
             //logs user out and reqirects to login page
             HttpContext.Session.SetString("auth", "false");

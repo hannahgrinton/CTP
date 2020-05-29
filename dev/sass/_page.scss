@@ -2,4 +2,7 @@
     width: 100%;
     text-align: center;
     margin: auto;
+    &--delete {
+        margin-left: +100px;
+    }
 }

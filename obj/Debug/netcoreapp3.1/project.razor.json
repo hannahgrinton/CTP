@@ -20644,6 +20644,11 @@
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/DeleteEbook.cshtml",
+      "TargetPath": "Views\\Admin\\DeleteEbook.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

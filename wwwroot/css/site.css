@@ -290,6 +290,8 @@ a.link-block:hover .overlay-description {
   width: 100%;
   text-align: center;
   margin: auto; }
+  .page-content--delete {
+    margin-left: +100px; }
 
 .listing {
   margin: auto;
@@ -397,6 +399,11 @@ a.link-block:hover .overlay-description {
   padding: 10px;
   border-radius: 5px;
   margin-right: 10px; }
+
+.btn-form-delete {
+  border-radius: 5px;
+  border: 0;
+  padding: 10px; }
 
 .table {
   margin-top: 40px;
