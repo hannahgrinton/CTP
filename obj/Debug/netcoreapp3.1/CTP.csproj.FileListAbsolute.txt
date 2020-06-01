@@ -75,3 +75,4 @@
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/AddEbook.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/About.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/DeleteEbook.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/EditEbook.cshtml.g.cs

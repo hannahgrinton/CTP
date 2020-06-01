@@ -1,0 +1,65 @@
+@model CTP.Models.Ebook
+<a class="main__arrow" asp-controller="Admin" asp-action="Ebooks" style="cursor: pointer;"><i class="fas fa-arrow-left" style="font-size: 34px; float: left;"></i></a><div class="main__title main__title--listing">Edit eBook</div>
+<div class="main__description" style="margin-left: +100px;">@Model.title by @Model.author</div>
+<div class="page-content" style="margin-left: +100px;">
+    <form enctype="multipart/form-data" class="form" method="post" asp-controller="Admin" asp-action="EditEbookSubmit">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" asp-for="title" value="@Model.title" class="form-control input" maxlength="200" required>
+            <span asp-validation-for="title" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label for="version">Version</label>
+            <input type="text" asp-for="version" value="@Model.version" class="form-control input" maxlength="10" required style="width: 100px;">
+            <span asp-validation-for="version" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" asp-for="author" value="@Model.author" class="form-control input" maxlength="200" required>
+            <span asp-validation-for="author" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label for="amazon">Amazon Link</label>
+            <input type="text" asp-for="amazon" value="@Model.amazon" class="form-control input" maxlength="350" required>
+            <span asp-validation-for="amazon" class="text-danger" />
+        </div>
+        <div class="form-group" style="text-align: left;">
+            <label for="imgFile">Image file</label>
+            <div class="form-group">
+                <label class="btn btn-light" style="cursor: pointer;">
+                    Browse<input type="file" id="imgFile" name="newImgFile" hidden>
+                </label>
+                <span>Selected File: <span id="message" class="filename-text">@Model.imgFile</span></span>
+                <span asp-validation-for="imgFile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group" style="text-align: left;">
+            <label for="epub">ePub file</label>
+            <div class="form-group">
+                <label class="btn btn-light" style="cursor: pointer;">
+                    Browse<input type="file" id="epub" name="newEpub" hidden>
+                </label>
+            <span>Selected File: <span id="epub-message" class="filename-text">@Model.epub</span></span>
+                <span asp-validation-for="epub" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group" style="text-align: left;">
+            <label for="mobi">MOBI file</label>
+            <div class="form-group">
+                <label class="btn btn-light" style="cursor: pointer;">
+                    Browse<input type="file" id="mobi" name="newMobi" hidden>
+                </label>
+                <span>Selected File: <span id="mobi-message" class="filename-text">@Model.mobi</span></span>
+                <span asp-validation-for="mobi" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="hidden" asp-for="id" value="@Model.id">
+            <input type="hidden" asp-for="imgFile" value="@Model.imgFile">
+            <input type="hidden" asp-for="epub" value="@Model.epub">
+            <input type="hidden" asp-for="mobi" value="@Model.mobi">
+            <input style="float: right; margin-bottom: 80px;" class="edit-button" type="submit" value="Save Changes">
+        </div>
+    </form>
+
+</div>
