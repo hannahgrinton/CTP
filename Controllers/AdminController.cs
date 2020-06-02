@@ -34,12 +34,12 @@ namespace CTP.Controllers {
         }
 
         public IActionResult Expositions() {
-            ViewBag.Current = "Booklets";
+            ViewBag.Current = "Expositions";
             return View(bookManager);
         }
 
         public IActionResult Booklets() {
-            ViewBag.Current = "Expositions";
+            ViewBag.Current = "Booklets";
             return View(bookManager);
         }
 
