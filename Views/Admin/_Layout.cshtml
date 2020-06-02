@@ -15,13 +15,16 @@
         <div class="header__main">
             <div class="header__main__title"><a asp-controller="Admin" asp-action="Index" class="home-link">Christian Truth Publishing</a></div>
         </div>@*header__main*@
-        <div class="header__bottom" style="padding-bottom: 5px;">
+        <div class="header__bottom">
             <nav class="header__nav">
                 <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Ebooks" ? "activeLink" : "") ' asp-controller="Admin" asp-action="Ebooks" id="ebookLink">eBooks</a></span>
                 <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Ministry" ? "activeLink" : "") ' asp-controller="Admin" asp-action="Ministry" id="bookLink">Ministry</a></span>
                 <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Expositions" ? "activeLink" : "") ' asp-controller="Admin" asp-action="Expositions" id="studyLink">Expositions</a></span>
                 <span class="header__nav__item"><a class='nav-item @(ViewBag.Current == "Booklets" ? "activeLink" : "") ' asp-controller="Admin" asp-action="Booklets" id="bookletLink">Booklets</a></span>
             </nav>@*header__nav*@
+            <div class="header__social">
+                <a asp-controller="Admin" asp-action="Logout"><span class="social-item" style="margin: 0;" id="btnLogout"><i class="fas fa-sign-out-alt"></i></span></a>
+            </div>@*header__social*@
         </div>@*header__bottom*@
         <div class="header__collapse">
             <i class="fas fa-bars" id="btnCollapse"></i>
