@@ -43,6 +43,7 @@ namespace CTP.Controllers {
             return View(bookManager);
         }
 
+        //---------------------------------------------------------- ebooks
         public IActionResult AddEbook() {
             ViewBag.Current = "";
             Ebook ebook = new Ebook();
@@ -191,6 +192,131 @@ namespace CTP.Controllers {
             return RedirectToAction("Ebooks");
         }
         
+        //---------------------------------------------------------- ministry
+        public IActionResult AddMinistry() {
+            ViewBag.Current = "";
+            Ministry ministry = new Ministry();
+            return View(ministry);
+        }
+
+        [HttpPost]
+        public IActionResult AddMinistrySubmit(Ministry ministry, IFormFile frontcover, IFormFile backcover) {
+            if (!ModelState.IsValid) return RedirectToAction("AddMinistry");
+            ImageManager imageManager = new ImageManager(environment, "images/covers/ministry");
+            int result = imageManager.uploadImage(frontcover);
+            switch (result) {
+                case 1:
+                    Console.WriteLine("\n\n\n*** Wrong File Type! ***");
+                    ViewData["feedback"] = "Wrong File Type";
+                    return RedirectToAction("AddMinistry");
+                case 2:
+                    Console.WriteLine("\n\n\n*** File Too Large! ***");
+                    ViewData["feedback"] = "File Too Large";
+                    return RedirectToAction("AddMinistry");
+                case 3:
+                    Console.WriteLine("\n\n\n*** File Name Too Long! ***");
+                    ViewData["feedback"] = "File Name Too Long";
+                    return RedirectToAction("AddMinistry");
+                case 4:
+                    Console.WriteLine("\n\n\n*** Error Saving File! ***");
+                    ViewData["feedback"] = "Error Saving File";
+                    return RedirectToAction("AddMinistry");
+                case 5:
+                    ViewData["feedback"] = "Success";
+                    ministry.frontcover = imageManager.fileName;
+                    int result2 = imageManager.uploadImage(backcover);
+                    if (result2 == 5) {
+                        ministry.backcover = imageManager.fileName;
+                        bookManager.Add(ministry);
+                        bookManager.SaveChanges();
+                        return RedirectToAction("Ministry");
+                    } else {
+                        Console.WriteLine("\n\n\n***There has been an error adding the back cover!***");
+                        return RedirectToAction("AddMinistry");
+                    }
+
+                default:
+                    Console.WriteLine("\n\n\n*** No File Selected! ***");
+                    ViewData["feedback"] = "No File Selected";
+                    return RedirectToAction("AddMinistry");
+            } 
+
+        }
+        
+        [Route("/DeleteMinistry/{id}")]
+        public IActionResult DeleteMinistry(int id) {
+            Ministry ministry = new Ministry();
+            ministry = bookManager.getMinistry(id);
+            return View(ministry);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteMinistrySubmit(Ministry ministry) {
+            ministry = bookManager.getMinistry(ministry.id);
+            ImageManager imageManager = new ImageManager(environment, "images/covers/ministry");
+            bool result = imageManager.deleteImage(ministry.frontcover);
+            if (result) {
+                bool result2 = imageManager.deleteImage(ministry.backcover);
+                if (result2) {
+                    bookManager.Remove(ministry);
+                    bookManager.SaveChanges();
+                } else {
+                    Console.WriteLine("\n\n\n***There has been an error deleting the back cover file! Error Code: " + result2 + "***\n\n\n");
+                }
+            } else {
+                Console.WriteLine("\n\n\n***There has been an error deleting the front cover file!***\n\n\n");
+            }
+            return RedirectToAction("Ministry");
+        }
+        
+        [Route("/EditMinistry/{id}")]
+        public IActionResult EditMinistry(int id) {
+            Ministry ministry = new Ministry();
+            ministry = bookManager.getMinistry(id);
+            return View(ministry);
+        }
+        
+        [HttpPost]
+        public IActionResult EditMinistrySubmit(Ministry ministry, IFormFile newfrontcover, IFormFile newbackcover) {
+            if (!ModelState.IsValid) return RedirectToAction("EditMinistry", ministry.id);
+            ImageManager imageManager = new ImageManager(environment, "images/covers/ministry");
+            if((newfrontcover != null) && (newfrontcover.FileName != "") && (ministry.frontcover != newfrontcover.FileName)) {
+                Console.WriteLine("\n\n\n***Front Image was not null so we're changing it.");
+                bool delete = imageManager.deleteImage(ministry.frontcover);
+                if (delete) {
+                    int result = imageManager.uploadImage(newfrontcover);
+                    if (result == 5) {
+                        ViewData["feedback"] = "Success";
+                        Console.WriteLine("\n\n\n***Successfully uploaded image to server!***");
+                        ministry.frontcover = imageManager.fileName;
+                    } else {
+                        Console.WriteLine("\n\n\n***Error!***");
+                        return RedirectToAction("EditMinistry", ministry.id);
+                    }
+                } else {
+                    Console.WriteLine("\n\n\n***There has been an error deleting old image file!***");
+                    return RedirectToAction("EditMinistry", ministry.id);
+                }
+            } else {
+                Console.WriteLine("\n\n\n***Front Cover Image was null so we're moving on.");
+                Console.WriteLine("\n\n\nCurrent Front Cover: " + ministry.frontcover);
+            }
+            if((newbackcover != null) && (newbackcover.FileName != "") && (ministry.backcover != newbackcover.FileName)) {
+                Console.WriteLine("\n\n\n***Back Image was not null so we're changing it.");
+                bool bool2 = imageManager.deleteImage(ministry.backcover);
+                if (bool2) {
+                    int result2 = imageManager.uploadImage(newbackcover);
+                    ministry.backcover = imageManager.fileName;
+                }
+            } else {
+                Console.WriteLine("\n\n\n***Backcover was null so we're moving on.");
+                Console.WriteLine("\n\n\nCurrent Back Cover: " + ministry.backcover);
+            }
+            
+            bookManager.Update(ministry);
+            bookManager.SaveChanges();
+            return RedirectToAction("Ministry");
+        }
         public IActionResult Logout() {
             //logs user out and reqirects to login page
             HttpContext.Session.SetString("auth", "false");

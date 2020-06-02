@@ -10542,6 +10542,16 @@ function _interopRequireDefault(obj) {
     var filename = (0, _jquery2.default)(this).val().split("\\").pop();
     (0, _jquery2.default)("#message").text(filename);
 });
+(0, _jquery2.default)("#frontcover").change(function () {
+    console.log((0, _jquery2.default)(this).val());
+    var filename = (0, _jquery2.default)(this).val().split("\\").pop();
+    (0, _jquery2.default)("#message").text(filename);
+});
+(0, _jquery2.default)("#backcover").change(function () {
+    console.log((0, _jquery2.default)(this).val());
+    var filename = (0, _jquery2.default)(this).val().split("\\").pop();
+    (0, _jquery2.default)("#message1").text(filename);
+});
 //epub file name update
 (0, _jquery2.default)("#epub").change(function () {
     console.log((0, _jquery2.default)(this).val());

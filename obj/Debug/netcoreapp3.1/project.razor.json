@@ -20561,6 +20561,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/AddMinistry.cshtml",
+      "TargetPath": "Views\\Admin\\AddMinistry.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/Ministry.cshtml",
       "TargetPath": "Views\\Admin\\Ministry.cshtml",
       "FileKind": "mvc"
@@ -20596,6 +20601,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/EditMinistry.cshtml",
+      "TargetPath": "Views\\Admin\\EditMinistry.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Booklets.cshtml",
       "TargetPath": "Views\\Home\\Booklets.cshtml",
       "FileKind": "mvc"
@@ -20608,6 +20618,11 @@
     {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/About.cshtml",
       "TargetPath": "Views\\Home\\About.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/DeleteMinistry.cshtml",
+      "TargetPath": "Views\\Admin\\DeleteMinistry.cshtml",
       "FileKind": "mvc"
     },
     {

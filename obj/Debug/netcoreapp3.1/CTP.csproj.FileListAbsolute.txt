@@ -76,3 +76,6 @@
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/About.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/DeleteEbook.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/EditEbook.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/AddMinistry.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/DeleteMinistry.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/EditMinistry.cshtml.g.cs

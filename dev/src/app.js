@@ -164,6 +164,16 @@ $("#imgFile").change(function() {
     var filename = $(this).val().split("\\").pop();
     $("#message").text(filename);
 });
+$("#frontcover").change(function() {
+    console.log($(this).val());
+    var filename = $(this).val().split("\\").pop();
+    $("#message").text(filename);
+});
+$("#backcover").change(function() {
+    console.log($(this).val());
+    var filename = $(this).val().split("\\").pop();
+    $("#message1").text(filename);
+});
 //epub file name update
 $("#epub").change(function() {
     console.log($(this).val());
