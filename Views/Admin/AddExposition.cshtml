@@ -1,0 +1,51 @@
+@model CTP.Models.Exposition
+<a class="main__arrow" asp-controller="Admin" asp-action="Expositions" style="cursor: pointer;"><i class="fas fa-arrow-left" style="font-size: 34px; float: left;"></i></a><div class="main__title main__title--listing">Expositions</div>
+<div class="main__description" style="margin-left: +100px;">Add New</div>
+<div class="page-content" style="margin-left: +100px;">
+    <form enctype="multipart/form-data" class="form" method="post" asp-controller="Admin" asp-action="AddExpositionSubmit">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" asp-for="title" class="form-control input" maxlength="200" required>
+            <span asp-validation-for="title" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" asp-for="author" class="form-control input" maxlength="200" required>
+            <span asp-validation-for="author" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label for="code">Code</label>
+            <input type="text" asp-for="code" class="form-control input" maxlength="10"  style="width: 100px;" required>
+            <span asp-validation-for="code" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label for="amazon">Price</label>
+            <input type="number" step="0.01" asp-for="price" class="form-control input"  style="width: 100px;" maxlength="10" required>
+            <span asp-validation-for="price" class="text-danger" />
+        </div>
+        <div class="form-group" style="text-align: left;">
+            <label for="imgFile">Front Cover Image</label>
+            <div class="form-group">
+                <label class="btn btn-light" style="cursor: pointer;">
+                    Browse<input type="file" id="frontcover" name="frontcover" hidden required>
+                </label>
+                <span>Selected File: <span id="message" class="filename-text">No File Selected</span></span>
+                <span asp-validation-for="frontcover" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group" style="text-align: left;">
+            <label for="imgFile">Back Cover Image</label>
+            <div class="form-group">
+                <label class="btn btn-light" style="cursor: pointer;">
+                    Browse<input type="file" id="backcover" name="backcover" hidden required>
+                </label>
+                <span>Selected File: <span id="message1" class="filename-text">No File Selected</span></span>
+                <span asp-validation-for="backcover" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input style="float: right; margin-bottom: 80px;" class="add-button" type="submit" value="Add">
+        </div>
+    </form>
+
+</div>

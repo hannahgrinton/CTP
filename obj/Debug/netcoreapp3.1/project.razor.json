@@ -20546,6 +20546,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/EditExposition.cshtml",
+      "TargetPath": "Views\\Admin\\EditExposition.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Languages.cshtml",
       "TargetPath": "Views\\Home\\Languages.cshtml",
       "FileKind": "mvc"
@@ -20631,6 +20636,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/DeleteExposition.cshtml",
+      "TargetPath": "Views\\Admin\\DeleteExposition.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/AddEbook.cshtml",
       "TargetPath": "Views\\Admin\\AddEbook.cshtml",
       "FileKind": "mvc"
@@ -20643,6 +20653,11 @@
     {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Login/Index.cshtml",
       "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/AddExposition.cshtml",
+      "TargetPath": "Views\\Admin\\AddExposition.cshtml",
       "FileKind": "mvc"
     },
     {

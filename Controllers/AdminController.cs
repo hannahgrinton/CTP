@@ -261,7 +261,7 @@ namespace CTP.Controllers {
                     bookManager.Remove(ministry);
                     bookManager.SaveChanges();
                 } else {
-                    Console.WriteLine("\n\n\n***There has been an error deleting the back cover file! Error Code: " + result2 + "***\n\n\n");
+                    Console.WriteLine("\n\n\n***There has been an error deleting the back cover file!***\n\n\n");
                 }
             } else {
                 Console.WriteLine("\n\n\n***There has been an error deleting the front cover file!***\n\n\n");
@@ -317,6 +317,133 @@ namespace CTP.Controllers {
             bookManager.SaveChanges();
             return RedirectToAction("Ministry");
         }
+        
+        //---------------------------------------------------------- expositions
+        public IActionResult AddExposition() {
+            ViewBag.Current = "";
+            Exposition exposition = new Exposition();
+            return View(exposition);
+        }
+
+        [HttpPost]
+        public IActionResult AddExpositionSubmit(Exposition exposition, IFormFile frontcover, IFormFile backcover) {
+            if (!ModelState.IsValid) return RedirectToAction("AddExposition");
+            ImageManager imageManager = new ImageManager(environment, "images/covers/expositions");
+            int result = imageManager.uploadImage(frontcover);
+            switch (result) {
+                case 1:
+                    Console.WriteLine("\n\n\n*** Wrong File Type! ***");
+                    ViewData["feedback"] = "Wrong File Type";
+                    return RedirectToAction("AddExposition");
+                case 2:
+                    Console.WriteLine("\n\n\n*** File Too Large! ***");
+                    ViewData["feedback"] = "File Too Large";
+                    return RedirectToAction("AddExposition");
+                case 3:
+                    Console.WriteLine("\n\n\n*** File Name Too Long! ***");
+                    ViewData["feedback"] = "File Name Too Long";
+                    return RedirectToAction("AddExposition");
+                case 4:
+                    Console.WriteLine("\n\n\n*** Error Saving File! ***");
+                    ViewData["feedback"] = "Error Saving File";
+                    return RedirectToAction("AddExposition");
+                case 5:
+                    ViewData["feedback"] = "Success";
+                    exposition.frontcover = imageManager.fileName;
+                    int result2 = imageManager.uploadImage(backcover);
+                    if (result2 == 5) {
+                        exposition.backcover = imageManager.fileName;
+                        bookManager.Add(exposition);
+                        bookManager.SaveChanges();
+                        return RedirectToAction("Expositions");
+                    } else {
+                        Console.WriteLine("\n\n\n***There has been an error adding the back cover!***");
+                        return RedirectToAction("AddExposition");
+                    }
+
+                default:
+                    Console.WriteLine("\n\n\n*** No File Selected! ***");
+                    ViewData["feedback"] = "No File Selected";
+                    return RedirectToAction("AddExposition");
+            } 
+
+        }
+        
+        [Route("/DeleteExposition/{id}")]
+        public IActionResult DeleteExposition(int id) {
+            Exposition exposition = new Exposition();
+            exposition = bookManager.getExposition(id);
+            return View(exposition);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteExpositionSubmit(Exposition exposition) {
+            exposition = bookManager.getExposition(exposition.id);
+            ImageManager imageManager = new ImageManager(environment, "images/covers/expositions");
+            bool result = imageManager.deleteImage(exposition.frontcover);
+            if (result) {
+                bool result2 = imageManager.deleteImage(exposition.backcover);
+                if (result2) {
+                    bookManager.Remove(exposition);
+                    bookManager.SaveChanges();
+                } else {
+                    Console.WriteLine("\n\n\n***There has been an error deleting the back cover file!***\n\n\n");
+                }
+            } else {
+                Console.WriteLine("\n\n\n***There has been an error deleting the front cover file!***\n\n\n");
+            }
+            return RedirectToAction("Expositions");
+        }
+        
+        [Route("/EditExposition/{id}")]
+        public IActionResult EditExposition(int id) {
+            Exposition exposition = new Exposition();
+            exposition = bookManager.getExposition(id);
+            return View(exposition);
+        }
+        
+        [HttpPost]
+        public IActionResult EditExpositionSubmit(Exposition exposition, IFormFile newfrontcover, IFormFile newbackcover) {
+            if (!ModelState.IsValid) return RedirectToAction("EditExposition", exposition.id);
+            ImageManager imageManager = new ImageManager(environment, "images/covers/expositions");
+            if((newfrontcover != null) && (newfrontcover.FileName != "") && (exposition.frontcover != newfrontcover.FileName)) {
+                Console.WriteLine("\n\n\n***Front Image was not null so we're changing it.");
+                bool delete = imageManager.deleteImage(exposition.frontcover);
+                if (delete) {
+                    int result = imageManager.uploadImage(newfrontcover);
+                    if (result == 5) {
+                        ViewData["feedback"] = "Success";
+                        Console.WriteLine("\n\n\n***Successfully uploaded image to server!***");
+                        exposition.frontcover = imageManager.fileName;
+                    } else {
+                        Console.WriteLine("\n\n\n***Error!***");
+                        return RedirectToAction("EditExposition", exposition.id);
+                    }
+                } else {
+                    Console.WriteLine("\n\n\n***There has been an error deleting old image file!***");
+                    return RedirectToAction("EditExposition", exposition.id);
+                }
+            } else {
+                Console.WriteLine("\n\n\n***Front Cover Image was null so we're moving on.");
+                Console.WriteLine("\n\n\nCurrent Front Cover: " + exposition.frontcover);
+            }
+            if((newbackcover != null) && (newbackcover.FileName != "") && (exposition.backcover != newbackcover.FileName)) {
+                Console.WriteLine("\n\n\n***Back Image was not null so we're changing it.");
+                bool bool2 = imageManager.deleteImage(exposition.backcover);
+                if (bool2) {
+                    int result2 = imageManager.uploadImage(newbackcover);
+                    exposition.backcover = imageManager.fileName;
+                }
+            } else {
+                Console.WriteLine("\n\n\n***Backcover was null so we're moving on.");
+                Console.WriteLine("\n\n\nCurrent Back Cover: " + exposition.backcover);
+            }
+            
+            bookManager.Update(exposition);
+            bookManager.SaveChanges();
+            return RedirectToAction("Expositions");
+        }
+        
         public IActionResult Logout() {
             //logs user out and reqirects to login page
             HttpContext.Session.SetString("auth", "false");
