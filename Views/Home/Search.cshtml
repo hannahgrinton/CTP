@@ -1,0 +1,58 @@
+@model CTP.Models.BookManager
+<div class="main__title">Search Results</div>
+<div class="main__description">Term Searched: "@ViewBag.SearchTerm"</div>
+<div class="page-content" style="min-height: 500px;">
+    <div class="search">
+        <div class="table">
+            @if ((Model.ministryResults.Count() == 0) && (Model.ebookResults.Count() == 0) && (Model.expositionResults.Count() == 0) && (Model.bookletResults.Count() == 0)) {
+                <div id="no-items">There are no listings matching the term you entered, please try again with a different query.</div>
+            }
+            <div class="table__grid" id="tblSearch">
+                @foreach (var item in Model.ministryResults)
+                {
+                    <div class="table__grid__item">
+                        <a asp-controller="Home" asp-action="ViewMinistry" asp-route-id="@item.id">
+                            <img src="~/images/covers/ministry/@item.frontcover" class="grid-item-image">
+                            <div class="grid-item-title">@item.title</div>
+                            <div class="grid-item-author">@item.author</div>
+                            <div class="grid-item-price">$@item.price</div>
+                        </a>
+                    </div>
+                }
+                @foreach (var item in Model.ebookResults)
+                {
+                    <div class="table__grid__item">
+                        <a asp-controller="Home" asp-action="ViewEbook" asp-route-id="@item.id">
+                            <img src="~/images/covers/ebooks/@item.imgFile" class="grid-item-image">
+                            <div class="grid-item-title">@item.title</div>
+                            <div class="grid-item-author">@item.author</div>
+                            <div class="grid-item-price">eBook Version: @item.version</div>
+                        </a>
+                    </div>
+                }
+                @foreach (var item in Model.expositionResults)
+                {
+                    <div class="table__grid__item">
+                        <a asp-controller="Home" asp-action="ViewExposition" asp-route-id="@item.id">
+                            <img src="~/images/covers/expositions/@item.frontcover" class="grid-item-image">
+                            <div class="grid-item-title">@item.title</div>
+                            <div class="grid-item-author">@item.author</div>
+                            <div class="grid-item-price">$@item.price</div>
+                        </a>
+                    </div>
+                }
+                @foreach (var item in Model.bookletResults)
+                {
+                    <div class="table__grid__item">
+                        <a asp-controller="Home" asp-action="ViewBooklet" asp-route-id="@item.id">
+                            <img src="~/images/covers/booklets/@item.frontcover" class="grid-item-image">
+                            <div class="grid-item-title">@item.title</div>
+                            <div class="grid-item-author">@item.author</div>
+                            <div class="grid-item-price">$@item.price</div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>@*table*@
+    </div>
+</div>

@@ -12,6 +12,11 @@ namespace CTP.Models
         public DbSet<Booklet> booklets { get; set; }
         public DbSet<Exposition> expositions { get; set; }
 
+        public List<Ebook> ebookResults { get; set; }
+        public List<Ministry> ministryResults { get; set; }
+        public List<Booklet> bookletResults { get; set; }
+        public List<Exposition> expositionResults { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             optionsBuilder.UseMySQL(Connection.CONNECTION_STRING);
         }
@@ -33,6 +38,26 @@ namespace CTP.Models
         //get ebook item
         public Ebook getEbook(int id) {
             return ebooks.Single(item => item.id == id);
+        }
+
+        //search ministry
+        public void searchMinistry(string term) {
+            ministryResults = ministry.Where(item => (item.title.Contains(term)) || (item.author.Contains(term))).ToList();
+        }
+
+        //search ebooks
+        public void searchEbooks(string term) {
+            ebookResults = ebooks.Where(item => (item.title.Contains(term)) || (item.author.Contains(term))).ToList();
+        }
+
+        //search expositions
+        public void searchExpositions(string term) {
+            expositionResults = expositions.Where(item => (item.title.Contains(term)) || (item.author.Contains(term))).ToList();
+        }
+
+        //search booklets
+        public void searchBooklets(string term) {
+            bookletResults = booklets.Where(item => (item.title.Contains(term)) || (item.author.Contains(term))).ToList();
         }
     }
 }

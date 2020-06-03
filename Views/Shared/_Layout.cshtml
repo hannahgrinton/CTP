@@ -14,9 +14,9 @@
     <header class="header">
         <div class="header__main">
             <div class="header__main__title"><a href="/" class="home-link">Christian Truth Publishing</a></div>
-            <form class="header__main__search" method="" action="">
-                <input autocomplete="on" required="required" placeholder="search..." type="text" class="searchbar">
-                <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+            <form class="header__main__search" method="post" asp-controller="Home" asp-action="Search">
+                <input name="term" autocomplete="on" required="required" placeholder="search..." type="text" class="searchbar">
+                <button class="search-button" id="search-button" type="submit"><i class="fas fa-search"></i></button>
             </form>@*header__main__search*@
         </div>@*header__main*@
         <div class="header__bottom">

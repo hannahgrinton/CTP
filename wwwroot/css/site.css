@@ -238,9 +238,9 @@
         .main__description__list li .bold {
           font-weight: 700; }
   .main__arrow {
-    color: #688386; }
+    color: #688386 !important; }
     .main__arrow:hover {
-      color: #acc6c9; }
+      color: #acc6c9 !important; }
 
 .content {
   width: 100%;

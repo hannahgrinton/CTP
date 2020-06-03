@@ -85,6 +85,16 @@ namespace CTP.Controllers
             return View(bookManager);
         }
 
+        public IActionResult Search(string term) {
+            Console.WriteLine("\n\n\nSearch Term: " + term);
+            ViewBag.SearchTerm = term;
+            bookManager.searchMinistry(term);
+            bookManager.searchExpositions(term);
+            bookManager.searchEbooks(term);
+            bookManager.searchBooklets(term);
+            return View(bookManager);
+        }
+
         public IActionResult Privacy()
         {
             return View();

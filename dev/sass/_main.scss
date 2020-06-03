@@ -60,9 +60,9 @@
 
     }
     &__arrow {
-        color: $accent-color;
+        color: $accent-color !important;
         &:hover {
-            color: $light-color;
+            color: $light-color !important;
         }
     }
 }
