@@ -1,0 +1,14 @@
+@model CTP.Models.Booklet
+<a class="main__arrow" asp-controller="Admin" asp-action="Booklets" style="cursor: pointer;"><i class="fas fa-arrow-left" style="font-size: 34px; float: left;"></i></a><div class="main__title  main__title--listing">Delete Booklet</div>
+<div class="main__description" style="margin-left: +100px;">@Model.title by @Model.author</div>
+<div class="page-content page-content--delete">
+    <form class="form" method="post" asp-controller="Admin" asp-action="DeleteBookletSubmit">
+        <div class="form-group">
+            <img src="~/images/covers/booklets/@Model.frontcover" class="grid-item-image">
+        </div>
+        <div class="form-group">
+            <input asp-for="id" hidden>
+            <input class="btn-form-delete btn-warning" type="submit" value="Delete">
+        </div>
+    </form>
+</div>

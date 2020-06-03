@@ -20611,8 +20611,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/DeleteBooklet.cshtml",
+      "TargetPath": "Views\\Admin\\DeleteBooklet.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Home/Booklets.cshtml",
       "TargetPath": "Views\\Home\\Booklets.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/AddBooklet.cshtml",
+      "TargetPath": "Views\\Admin\\AddBooklet.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20653,6 +20663,11 @@
     {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Login/Index.cshtml",
       "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/EditBooklet.cshtml",
+      "TargetPath": "Views\\Admin\\EditBooklet.cshtml",
       "FileKind": "mvc"
     },
     {
