@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christian Truth Publishing</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap&family=Jost:wght@300&display=swap" rel="stylesheet" SameSite=None>
+    <script src="https://kit.fontawesome.com/6d0b9dc65c.js" crossorigin="anonymous" SameSite=None></script>
+</head>
+<body>
+    <img src="~/images/CTPimage.jpg" class="bg-image">
+    <header class="header">
+        <div class="header__main">
+            <div class="header__main__title"><a href="/" class="home-link">Christian Truth Publishing</a></div>
+        </div>@*header__main*@
+    </header> @*header*@
+
+    <div class="main">
+        @RenderBody()
+    </div>@*main*@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

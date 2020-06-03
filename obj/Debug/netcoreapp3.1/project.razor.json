@@ -20671,6 +20671,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Login/_Layout.cshtml",
+      "TargetPath": "Views\\Login\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/hannahgrinton/Development/CTP/Views/Admin/AddExposition.cshtml",
       "TargetPath": "Views\\Admin\\AddExposition.cshtml",
       "FileKind": "mvc"
