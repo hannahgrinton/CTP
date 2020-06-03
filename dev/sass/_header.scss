@@ -121,8 +121,12 @@
         color: $accent-color;
     }
 }
-
 .activeLink {
     @include active-link();
     pointer-events: none;
 }
+.active-link-mod {
+    @include active-link-mod();
+    pointer-events: none;
+}
+

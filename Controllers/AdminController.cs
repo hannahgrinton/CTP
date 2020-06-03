@@ -16,35 +16,50 @@ namespace CTP.Controllers {
         }
 
         public IActionResult Index() {
-            // if (HttpContext.Session.GetString("auth") != "true") {
-            //     return RedirectToAction("Index", "Login");
-            // }
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             return View(bookManager);
         }
 
         public IActionResult Ebooks() {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "Ebooks";
             return View(bookManager);
         }
 
         public IActionResult Ministry() {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "Ministry";
             return View(bookManager);
         }
 
         public IActionResult Expositions() {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "Expositions";
             return View(bookManager);
         }
 
         public IActionResult Booklets() {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "Booklets";
             return View(bookManager);
         }
 
         //---------------------------------------------------------- ebooks
         public IActionResult AddEbook() {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Ebook ebook = new Ebook();
             return View(ebook);
@@ -52,6 +67,9 @@ namespace CTP.Controllers {
 
         [HttpPost]
         public IActionResult AddEbookSubmit(Ebook ebook, IFormFile imgFile, IFormFile epub, IFormFile mobi) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             if (!ModelState.IsValid) return RedirectToAction("AddEbook");
             ImageManager imageManager = new ImageManager(environment, "images/covers/ebooks");
             FileManager epubManager = new FileManager(environment, "ebooks/epub");
@@ -106,6 +124,9 @@ namespace CTP.Controllers {
         
         [Route("/DeleteEbook/{id}")]
         public IActionResult DeleteEbook(int id) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Ebook ebook = new Ebook();
             ebook = bookManager.getEbook(id);
@@ -114,6 +135,9 @@ namespace CTP.Controllers {
         
         [HttpPost]
         public IActionResult DeleteEbookSubmit(Ebook ebook) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ebook = bookManager.getEbook(ebook.id);
             ImageManager imageManager = new ImageManager(environment, "images/covers/ebooks");
             FileManager epubManager = new FileManager(environment, "ebooks/epub");
@@ -140,6 +164,9 @@ namespace CTP.Controllers {
         
         [Route("/EditEbook/{id}")]
         public IActionResult EditEbook(int id) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Ebook ebook = new Ebook();
             ebook = bookManager.getEbook(id);
@@ -196,6 +223,9 @@ namespace CTP.Controllers {
         
         //---------------------------------------------------------- ministry
         public IActionResult AddMinistry() {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Ministry ministry = new Ministry();
             return View(ministry);
@@ -203,6 +233,9 @@ namespace CTP.Controllers {
 
         [HttpPost]
         public IActionResult AddMinistrySubmit(Ministry ministry, IFormFile frontcover, IFormFile backcover) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             if (!ModelState.IsValid) return RedirectToAction("AddMinistry");
             ImageManager imageManager = new ImageManager(environment, "images/covers/ministry");
             int result = imageManager.uploadImage(frontcover);
@@ -247,6 +280,9 @@ namespace CTP.Controllers {
         
         [Route("/DeleteMinistry/{id}")]
         public IActionResult DeleteMinistry(int id) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Ministry ministry = new Ministry();
             ministry = bookManager.getMinistry(id);
@@ -255,6 +291,9 @@ namespace CTP.Controllers {
 
         [HttpPost]
         public IActionResult DeleteMinistrySubmit(Ministry ministry) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ministry = bookManager.getMinistry(ministry.id);
             ImageManager imageManager = new ImageManager(environment, "images/covers/ministry");
             bool result = imageManager.deleteImage(ministry.frontcover);
@@ -274,6 +313,9 @@ namespace CTP.Controllers {
         
         [Route("/EditMinistry/{id}")]
         public IActionResult EditMinistry(int id) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Ministry ministry = new Ministry();
             ministry = bookManager.getMinistry(id);
@@ -282,6 +324,9 @@ namespace CTP.Controllers {
         
         [HttpPost]
         public IActionResult EditMinistrySubmit(Ministry ministry, IFormFile newfrontcover, IFormFile newbackcover) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             if (!ModelState.IsValid) return RedirectToAction("EditMinistry", ministry.id);
             ImageManager imageManager = new ImageManager(environment, "images/covers/ministry");
             if((newfrontcover != null) && (newfrontcover.FileName != "") && (ministry.frontcover != newfrontcover.FileName)) {
@@ -324,6 +369,9 @@ namespace CTP.Controllers {
         
         //---------------------------------------------------------- expositions
         public IActionResult AddExposition() {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Exposition exposition = new Exposition();
             return View(exposition);
@@ -331,6 +379,9 @@ namespace CTP.Controllers {
 
         [HttpPost]
         public IActionResult AddExpositionSubmit(Exposition exposition, IFormFile frontcover, IFormFile backcover) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             if (!ModelState.IsValid) return RedirectToAction("AddExposition");
             ImageManager imageManager = new ImageManager(environment, "images/covers/expositions");
             int result = imageManager.uploadImage(frontcover);
@@ -375,6 +426,9 @@ namespace CTP.Controllers {
         
         [Route("/DeleteExposition/{id}")]
         public IActionResult DeleteExposition(int id) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Exposition exposition = new Exposition();
             exposition = bookManager.getExposition(id);
@@ -383,6 +437,9 @@ namespace CTP.Controllers {
 
         [HttpPost]
         public IActionResult DeleteExpositionSubmit(Exposition exposition) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             exposition = bookManager.getExposition(exposition.id);
             ImageManager imageManager = new ImageManager(environment, "images/covers/expositions");
             bool result = imageManager.deleteImage(exposition.frontcover);
@@ -402,6 +459,9 @@ namespace CTP.Controllers {
         
         [Route("/EditExposition/{id}")]
         public IActionResult EditExposition(int id) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Exposition exposition = new Exposition();
             exposition = bookManager.getExposition(id);
@@ -410,6 +470,9 @@ namespace CTP.Controllers {
         
         [HttpPost]
         public IActionResult EditExpositionSubmit(Exposition exposition, IFormFile newfrontcover, IFormFile newbackcover) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             if (!ModelState.IsValid) return RedirectToAction("EditExposition", exposition.id);
             ImageManager imageManager = new ImageManager(environment, "images/covers/expositions");
             if((newfrontcover != null) && (newfrontcover.FileName != "") && (exposition.frontcover != newfrontcover.FileName)) {
@@ -452,6 +515,9 @@ namespace CTP.Controllers {
         
         //---------------------------------------------------------- booklets
         public IActionResult AddBooklet() {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Booklet booklet = new Booklet();
             return View(booklet);
@@ -459,6 +525,9 @@ namespace CTP.Controllers {
 
         [HttpPost]
         public IActionResult AddBookletSubmit(Booklet booklet, IFormFile frontcover, IFormFile backcover) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             if (!ModelState.IsValid) return RedirectToAction("AddBooklet");
             ImageManager imageManager = new ImageManager(environment, "images/covers/booklets");
             int result = imageManager.uploadImage(frontcover);
@@ -502,6 +571,9 @@ namespace CTP.Controllers {
         
         [Route("DeleteBooklet/{id}")]
         public IActionResult DeleteBooklet(int id) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Booklet booklet = new Booklet();
             booklet = bookManager.getBooklet(id);
@@ -510,6 +582,9 @@ namespace CTP.Controllers {
 
         [HttpPost]
         public IActionResult DeleteBookletSubmit(Booklet booklet) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             booklet = bookManager.getBooklet(booklet.id);
             ImageManager imageManager = new ImageManager(environment, "images/covers/booklets");
             bool result = imageManager.deleteImage(booklet.frontcover);
@@ -529,6 +604,9 @@ namespace CTP.Controllers {
         
         [Route("/EditBooklet/{id}")]
         public IActionResult EditBooklet(int id) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             ViewBag.Current = "";
             Booklet booklet = new Booklet();
             booklet = bookManager.getBooklet(id);
@@ -537,6 +615,9 @@ namespace CTP.Controllers {
         
         [HttpPost]
         public IActionResult EditBookletSubmit(Booklet booklet, IFormFile newfrontcover, IFormFile newbackcover) {
+            if (HttpContext.Session.GetString("auth") != "true") {
+                return RedirectToAction("Index", "Login");
+            }
             if (!ModelState.IsValid) return RedirectToAction("EditBooklet", booklet.id);
             ImageManager imageManager = new ImageManager(environment, "images/covers/booklets");
             if((newfrontcover != null) && (newfrontcover.FileName != "") && (booklet.frontcover != newfrontcover.FileName)) {

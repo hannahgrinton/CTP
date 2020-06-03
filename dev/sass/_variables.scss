@@ -11,7 +11,14 @@
     padding-bottom: 15px;
     border-bottom: 3px solid $light-color;
     color: $light-color;
-}//----------------------------- media values
+}
+@mixin active-link-mod() {
+    text-decoration: none;
+    color: $light-color;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+//----------------------------- media values
 $extra-small-screen: 200px;
 $small-screen: 300px;
 $medium-screen: 400px;

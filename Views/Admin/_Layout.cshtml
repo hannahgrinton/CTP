@@ -29,10 +29,10 @@
         <div class="header__collapse">
             <i class="fas fa-bars" id="btnCollapse"></i>
             <div class="header__collapse__menu" id="menuCollapse">
-                <a class='nav-item @(ViewBag.Current == "Ebooks" ? "activeLink" : "") ' asp-controller="Admin" asp-action="Ebooks" id="ebookLink">eBooks</a>
-                <a class='nav-item @(ViewBag.Current == "Ministry" ? "activeLink" : "") ' asp-controller="Admin" asp-action="Ministry" id="bookLink">Ministry</a>
-                <a class='nav-item @(ViewBag.Current == "Expositions" ? "activeLink" : "") ' asp-controller="Admin" asp-action="Expositions" id="studyLink">Expositions</a>
-                <a class='nav-item @(ViewBag.Current == "Booklets" ? "activeLink" : "") ' asp-controller="Admin" asp-action="Booklets" id="bookletLink">Booklets</a>
+                <a class='nav-item @(ViewBag.Current == "Ebooks" ? "active-link-mod" : "") ' asp-controller="Admin" asp-action="Ebooks" id="ebookLink">eBooks</a>
+                <a class='nav-item @(ViewBag.Current == "Ministry" ? "active-link-mod" : "") ' asp-controller="Admin" asp-action="Ministry" id="bookLink">Ministry</a>
+                <a class='nav-item @(ViewBag.Current == "Expositions" ? "active-link-mod" : "") ' asp-controller="Admin" asp-action="Expositions" id="studyLink">Expositions</a>
+                <a class='nav-item @(ViewBag.Current == "Booklets" ? "active-link-mod" : "") ' asp-controller="Admin" asp-action="Booklets" id="bookletLink">Booklets</a>
             </div>
         </div>@*header__collapse*@
     </header> @*header*@

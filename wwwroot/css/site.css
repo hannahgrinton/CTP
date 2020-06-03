@@ -113,6 +113,13 @@
   color: #acc6c9;
   pointer-events: none; }
 
+.active-link-mod {
+  text-decoration: none;
+  color: #acc6c9;
+  padding-bottom: 0px;
+  border-bottom: none;
+  pointer-events: none; }
+
 .footer {
   z-index: 1;
   background-color: #2b2b2b;
@@ -506,6 +513,11 @@ a:hover {
       display: none; }
       .header__collapse__menu a {
         font-size: 14px; }
+        .header__collapse__menu a:hover {
+          text-decoration: none;
+          color: #acc6c9;
+          padding-bottom: 0px;
+          border-bottom: none; }
   .content {
     grid-template-columns: 1fr; }
     .content__block {

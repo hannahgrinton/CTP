@@ -38,9 +38,9 @@ namespace CTP
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(20);
                 options.Cookie.HttpOnly = true;
-                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-                options.Cookie.SameSite = SameSiteMode.Strict;
-                options.Cookie.IsEssential = true;
+                // options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+                // options.Cookie.SameSite = SameSiteMode.Strict;
+                // options.Cookie.IsEssential = true;
             });
             services.AddDbContext<CTP.Models.BookManager>();
             services.AddControllersWithViews();
