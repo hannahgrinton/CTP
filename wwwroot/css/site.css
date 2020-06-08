@@ -483,10 +483,20 @@ a:hover {
   .overlay-description {
     font-size: 12px;
     padding-top: 5px; }
+  .table__grid {
+    grid-template-columns: 1fr 1fr; }
   .footer {
     font-size: 14px -2; }
     .footer > * {
       padding-right: 15px; } }
+
+@media (max-width: 1000px) {
+  .listing__images__img {
+    width: 250px;
+    height: 350px; }
+  .main__description--about {
+    grid-template-columns: 1fr;
+    row-gap: 40px; } }
 
 @media (max-width: 800px) {
   .bg-image {
@@ -532,12 +542,24 @@ a:hover {
   .overlay-description {
     font-size: 12px;
     padding-top: 5px; }
+  .table__grid {
+    grid-template-columns: 1fr; }
   .footer {
     font-size: 10px; }
     .footer > * {
       padding-right: 10px; }
     .footer i {
       font-size: 12px; } }
+
+@media (max-width: 700px) {
+  .listing__images__img {
+    width: 150px;
+    height: 250px; } }
+
+@media (max-width: 500px) {
+  .listing {
+    grid-template-columns: 1fr;
+    padding-bottom: 40px; } }
 
 @media (max-width: 400px) {
   .header {
