@@ -10403,8 +10403,21 @@ function _interopRequireDefault(obj) {
 (0, _jquery2.default)("#ministry-sort").change(function () {
     var list = (0, _jquery2.default)("#tblMinistry");
     var listitems = list.children(".table__grid__item");
+    if ((0, _jquery2.default)(this).val() == "spanish") {
+        //sort by spanish
+        (0, _jquery2.default)(listitems).each(function (index) {
+            console.log(index + ": " + (0, _jquery2.default)(this).find(".grid-item-code").text());
+            if (~(0, _jquery2.default)(this).find(".grid-item-code").text().indexOf("SPB") || ~(0, _jquery2.default)(this).find(".grid-item-code").text().indexOf("SVB-313")) {
+                console.log("passed if statement");
+                (0, _jquery2.default)(list).append(this);
+            } else {
+                (0, _jquery2.default)(this).css("display", "none");
+            }
+        });
+    }
     if ((0, _jquery2.default)(this).val() == "title") {
         //sort by title
+        (0, _jquery2.default)(listitems).css("display", "inline");
         listitems.sort(function (a, b) {
             var compA = (0, _jquery2.default)(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
             var compB = (0, _jquery2.default)(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
@@ -10413,6 +10426,7 @@ function _interopRequireDefault(obj) {
         (0, _jquery2.default)(list).append(listitems);
     }
     if ((0, _jquery2.default)(this).val() == "author") {
+        (0, _jquery2.default)(listitems).css("display", "inline");
         //sort by author
         listitems.sort(function (a, b) {
             var compA = (0, _jquery2.default)(a).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
@@ -10422,6 +10436,7 @@ function _interopRequireDefault(obj) {
         (0, _jquery2.default)(list).append(listitems);
     }
     if ((0, _jquery2.default)(this).val() == "price") {
+        (0, _jquery2.default)(listitems).css("display", "inline");
         //sort by price
         listitems.sort(function (a, b) {
             var compA = parseFloat((0, _jquery2.default)(a).find(".grid-item-price").text().replace(/\$/g, ""));
@@ -10485,17 +10500,45 @@ function _interopRequireDefault(obj) {
 (0, _jquery2.default)("#booklet-sort").change(function () {
     var list = (0, _jquery2.default)("#tblBooklets");
     var listitems = list.children(".table__grid__item");
+    if ((0, _jquery2.default)(this).val() == "spanish") {
+        //sort by spanish
+        (0, _jquery2.default)(listitems).css("display", "inline");
+        (0, _jquery2.default)(listitems).each(function (index) {
+            console.log(index + ": " + (0, _jquery2.default)(this).find(".grid-item-code").text());
+            if (~(0, _jquery2.default)(this).find(".grid-item-code").text().indexOf("SPB")) {
+                console.log("passed if statement");
+                (0, _jquery2.default)(list).append(this);
+            } else {
+                (0, _jquery2.default)(this).css("display", "none");
+            }
+        });
+    }
+    if ((0, _jquery2.default)(this).val() == "french") {
+        //sort by french
+        (0, _jquery2.default)(listitems).css("display", "inline");
+        (0, _jquery2.default)(listitems).each(function (index) {
+            console.log(index + ": " + (0, _jquery2.default)(this).find(".grid-item-code").text());
+            if (~(0, _jquery2.default)(this).find(".grid-item-code").text().indexOf("FB")) {
+                console.log("passed if statement");
+                (0, _jquery2.default)(list).append(this);
+            } else {
+                (0, _jquery2.default)(this).css("display", "none");
+            }
+        });
+    }
     if ((0, _jquery2.default)(this).val() == "title") {
         //sort by title
+        (0, _jquery2.default)(listitems).css("display", "inline");
         listitems.sort(function (a, b) {
-            var compA = (0, _jquery2.default)(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
-            var compB = (0, _jquery2.default)(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
+            var compA = (0, _jquery2.default)(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "").replace("Ê", "E");
+            var compB = (0, _jquery2.default)(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "").replace("Ê", "E");
             return compA < compB ? -1 : compA > compB ? 1 : 0;
         });
         (0, _jquery2.default)(list).append(listitems);
     }
     if ((0, _jquery2.default)(this).val() == "author") {
         //sort by author
+        (0, _jquery2.default)(listitems).css("display", "inline");
         listitems.sort(function (a, b) {
             var compA = (0, _jquery2.default)(a).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
             var compB = (0, _jquery2.default)(b).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
@@ -10505,6 +10548,7 @@ function _interopRequireDefault(obj) {
     }
     if ((0, _jquery2.default)(this).val() == "price") {
         //sort by price
+        (0, _jquery2.default)(listitems).css("display", "inline");
         listitems.sort(function (a, b) {
             var compA = parseFloat((0, _jquery2.default)(a).find(".grid-item-price").text().replace(/\$/g, ""));
             var compB = parseFloat((0, _jquery2.default)(b).find(".grid-item-price").text().replace(/\$/g, ""));

@@ -25,8 +25,21 @@ $("#btnLeft").click(function() {
 $("#ministry-sort").change(function() {
     let list = $("#tblMinistry");
     let listitems = list.children(".table__grid__item");
+    if ($(this).val() == "spanish") {
+        //sort by spanish
+        $( listitems ).each(function( index ) {
+            console.log( index + ": " + $(this).find(".grid-item-code").text());
+            if (~$(this).find(".grid-item-code").text().indexOf("SPB") || ~$(this).find(".grid-item-code").text().indexOf("SVB-313")) {
+                console.log("passed if statement");
+                $(list).append(this);
+            } else {
+                $(this).css("display", "none");
+            }
+          });
+    }
     if ($(this).val() == "title") {
         //sort by title
+        $(listitems).css("display", "inline");
         listitems.sort(function(a,b) {
             let compA = $(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
             let compB = $(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
@@ -35,6 +48,7 @@ $("#ministry-sort").change(function() {
         $(list).append(listitems);
     }
     if ($(this).val() == "author") {
+        $(listitems).css("display", "inline");
         //sort by author
         listitems.sort(function(a,b) {
             let compA = $(a).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
@@ -44,6 +58,7 @@ $("#ministry-sort").change(function() {
         $(list).append(listitems);
     }
     if ($(this).val() == "price") {
+        $(listitems).css("display", "inline");
         //sort by price
         listitems.sort(function(a,b) {
             let compA = parseFloat($(a).find(".grid-item-price").text().replace(/\$/g, ""));
@@ -107,17 +122,45 @@ $("#exp-sort").change(function() {
 $("#booklet-sort").change(function() {
     let list = $("#tblBooklets");
     let listitems = list.children(".table__grid__item");
+    if ($(this).val() == "spanish") {
+        //sort by spanish
+        $(listitems).css("display", "inline");
+        $( listitems ).each(function( index ) {
+            console.log( index + ": " + $(this).find(".grid-item-code").text());
+            if (~$(this).find(".grid-item-code").text().indexOf("SPB")) {
+                console.log("passed if statement");
+                $(list).append(this);
+            } else {
+                $(this).css("display", "none");
+            }
+          });
+    }
+    if ($(this).val() == "french") {
+        //sort by french
+        $(listitems).css("display", "inline");
+        $( listitems ).each(function( index ) {
+            console.log( index + ": " + $(this).find(".grid-item-code").text());
+            if (~$(this).find(".grid-item-code").text().indexOf("FB")) {
+                console.log("passed if statement");
+                $(list).append(this);
+            } else {
+                $(this).css("display", "none");
+            }
+          });
+    }
     if ($(this).val() == "title") {
         //sort by title
+        $(listitems).css("display", "inline");
         listitems.sort(function(a,b) {
-            let compA = $(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
-            let compB = $(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "");
+            let compA = $(a).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "").replace("Ê", "E");
+            let compB = $(b).find(".grid-item-title").text().toUpperCase().replace(/\"/g, "").replace("Ê", "E");
             return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
         });
         $(list).append(listitems);
     }
     if ($(this).val() == "author") {
         //sort by author
+        $(listitems).css("display", "inline");
         listitems.sort(function(a,b) {
             let compA = $(a).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
             let compB = $(b).find(".grid-item-author").text().toUpperCase().replace(/\"/g, "");
@@ -127,6 +170,7 @@ $("#booklet-sort").change(function() {
     }
     if ($(this).val() == "price") {
         //sort by price
+        $(listitems).css("display", "inline");
         listitems.sort(function(a,b) {
             let compA = parseFloat($(a).find(".grid-item-price").text().replace(/\$/g, ""));
             let compB = parseFloat($(b).find(".grid-item-price").text().replace(/\$/g, ""));

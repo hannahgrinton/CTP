@@ -9,6 +9,8 @@
                 <option value="title">Title</option>
                 <option value="author">Author</option>
                 <option value="price">Price</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
             </select>@*filter__sortby__select*@
         </span>@*filter__sortby*@
     </div>@*filter*@
@@ -19,6 +21,7 @@
                 <div class="table__grid__item">
                     <a asp-controller="Home" asp-action="ViewBooklet" asp-route-id="@item.id">
                         <img src="~/images/covers/booklets/@item.frontcover" class="grid-item-image">
+                        <div class="grid-item-code" hidden>@item.code</div>
                         <div class="grid-item-title">@item.title</div>
                         <div class="grid-item-author">@item.author</div>
                         <div class="grid-item-price">$@item.price</div>

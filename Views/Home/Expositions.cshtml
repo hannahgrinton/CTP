@@ -6,7 +6,7 @@
         <span class="filter__sortby">
             <span class="filter__sortby__text">Sort By</span>
             <select class="filter__sortby__select" id="exp-sort" style="width: 200px;">
-                <option value="biblically">Biblically</option>
+                <option value="biblically">Book Code</option>
                 <option value="title">Title</option>
                 <option value="nonumbers">Title (Ignoring 1st/2nd)</option>
                 <option value="author">Author</option>
@@ -16,7 +16,7 @@
     </div>@*filter*@
     <div class="table">
         <div class="table__grid" id="tblExp">
-            @foreach (var item in Model.expositions)
+            @foreach (var item in Model.expositions.OrderBy(x => x.code.Replace("RB-", "").Replace("SVB-", "")))
             {
                 <div class="table__grid__item">
                     <a asp-controller="Home" asp-action="ViewExposition" asp-route-id="@item.id">
