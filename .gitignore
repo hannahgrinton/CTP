@@ -1,3 +1,6 @@
 dev/node_modules
 wwwroot/images/covers
 wwwroot/ebooks
+bin/
+obj/
+published/
