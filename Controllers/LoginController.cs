@@ -15,7 +15,7 @@ namespace CTP.Controllers {
         }
 
         public IActionResult Submit(string myUsername, string myPassword) {
-            WebLogin webLogin = new WebLogin("Server=localhost;Database=dbCTP;Uid=root;Pwd=;SslMode=none;", HttpContext);
+            WebLogin webLogin = new WebLogin("Server=localhost;Database=dbCTP;Uid=root;Pwd=Romans5:21;SslMode=none;", HttpContext);
             webLogin.username = myUsername;
             webLogin.password = myPassword;
             //do I have access?

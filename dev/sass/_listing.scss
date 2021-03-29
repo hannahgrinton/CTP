@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 20px;
+    min-height: 100vh;
     &__images {
         &__img {
             width: 350px;

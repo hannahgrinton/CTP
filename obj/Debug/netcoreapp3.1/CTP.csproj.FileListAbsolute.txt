@@ -87,3 +87,11 @@
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Admin/EditBooklet.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Login/_Layout.cshtml.g.cs
 /Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Search.cshtml.g.cs
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/published/web.config
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/published/appsettings.Development.json
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/published/appsettings.json
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/published/CTP.deps.json
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/published/CTP.runtimeconfig.json
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/published/dev/package-lock.json
+/Users/hannahgrinton/Development/CTP/bin/Debug/netcoreapp3.1/published/dev/package.json
+/Users/hannahgrinton/Development/CTP/obj/Debug/netcoreapp3.1/Razor/Views/Home/Spanish.cshtml.g.cs

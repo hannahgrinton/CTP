@@ -51,6 +51,11 @@ namespace CTP.Controllers
             ViewBag.Current = "Expositions";
             return View(bookManager);
         }
+
+        public IActionResult Spanish() {
+            ViewBag.Current = "Spanish";
+            return View(bookManager);
+        }
         
         [Route("/ViewMinistry/{id}")]
         public IActionResult ViewMinistry(int id) {
